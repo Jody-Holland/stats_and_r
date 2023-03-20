@@ -2,11 +2,13 @@
 title: "Day 1"
 author: "Jody Holland"
 date: "2023-03-20"
-output: rmdformats::downcute
-downcute_theme: "chaos"
+output: rmdformats::material
 ---
 
 ```{r setup, include=FALSE}
+knitr::opts_chunk$set(error = FALSE,
+                      warning = FALSE,
+                      message = FALSE)
 ```
 
 # Why Stats, Why R?
@@ -42,7 +44,7 @@ downcute_theme: "chaos"
 
         -   Poisson
 
-        -   Logistics
+        -   Logistic
 
         -   Multivariate GLM
 
@@ -74,24 +76,157 @@ downcute_theme: "chaos"
 
 # Basic Concepts
 
--   Statistical Inference
+Below are some basic concepts of stats.
 
-    -   We need stats because we can't do a universal sample of every possible data set, we can only make a subsection an extrapolate our results
+## Statistical Inference
 
--   Random Sampling
+We need stats because we can't do a universal sample of every possible data set, we can only make a subsection an extrapolate our results
 
-    -   In theory every data point should be independent, it should be random in the manner they are selected, independent of researcher bias. In practice this is very hard.
+## Random Sampling
 
--   Replicate
+In theory every data point should be independent, it should be random in the manner they are selected, independent of researcher bias. In practice this is very hard.
 
-    -   The lowest level in your design. I would call this the "unit of analysis"
+## Replicate
 
--   Variables
+The lowest level in your design. I would call this the "unit of analysis"
 
-    -   Any type of measurement that you use in your data
+## Variables
 
-        -   Dependent Variable: Response Variable: Y
+Any type of measurement that you use in your data:
 
-        -   Independent Variable: Predictor Variable: Explanatory Variable: X
+-   Dependent Variable: Response Variable: Y
 
--   
+-   Independent Variable: Predictor Variable: Explanatory Variable: X
+
+-   These variables can be categories, there are ways to make these pseudo-numeric, such as using dummy variables (assigning each data point either a 1 or 0 to signify if its a member of a given group)
+
+-   Categorical Variables can be configured into "treatments" which denotes various groupings of categorical variables
+
+## Error
+
+The degree to which our predictors are unable to determine the dependent variable.
+
+## Experimental Unit
+
+Different areas or time-spans wherein your data is collected. Having multiple areas wherein data is gathered shows replicatability in your experiment
+
+## Confounding relationships
+
+It may appear sometimes that there is a relationship is present in the results. However what it might be is that both your dependent and independent variables are actually mutually caused by another, not included third variable. Confounding variables are hard to find, you have to do a lot of research and accept criticism wholeheartedly
+
+## Sampling
+
+Sampling is working out what proportion of the population you have to sample in order to achieve a given certainity in your results ability to be extrapolated to the wider population
+
+In general, the smaller your sample size, the greater the standard error.
+
+However, the relationship between sample size and standard error is not linear, there are diminishing returns in increasing the sample size and improving your accuracy
+
+We must also consider the scale of the differences in our findings. Say our sample is small but the differences we find between groups is large, then maybe having a smaller sample is OK. However, if the differences in the results are more nuance, to truly conclude that the slight differences that do exist can be extrapolated to the population, we need a large sample.
+
+## Confidence
+
+Sampling plays an important role in determining the confidence of our results and subsequent inferences. In many circles, confidence is denoted using alpha/⍺. ⍺ of 0.05 means 95% confidence, ⍺ of 0.01 means 99% and so on
+
+## P Values
+
+Be careful about over using the P value (the probability you can reject the null hypothesis). Use it in the context of the effect size. High P + H effect size... then your cooking. Small effect size however could signify P-hacking/overestimating results based on large sampling
+
+# General Linear Model
+
+The General Linear Model breaks down some of the differences between continuous vs categorical independent variables in stats tests.
+
+Traditionally, there is clear differences between ANOVA and OLS. In OLS both X and Y are continuous, but in ANOVA X is categorical. However if you code the categories in ANOVA as dummy variables then do an OLS. This produces results very similar to OLS
+
+| ID  | Category | Height |
+|-----|----------|--------|
+| 1   | Tree     | 10     |
+| 2   | Tree     | 6      |
+| 3   | Lamp     | 8      |
+
+: Before transformation into dummy variables
+
+| ID  | Tree | Lamp | Height |
+|-----|------|------|--------|
+| 1   | 1    | 0    | 10     |
+| 2   | 1    | 0    | 6      |
+| 3   | 0    | 1    | 8      |
+
+: After transformation into dummy variables
+
+Then you can smash this into a standard multivariate regression like so:
+
+$$
+height = c + tree + lamp + e
+$$
+
+Here's an example using the continent categorical variable in gapminder data and it's effect on life expectancy using the lm() function
+
+```{r gapminder-continents}
+# load tidyverse
+library(tidyverse)
+# load gapminder for 2007
+data_gm = gapminder::gapminder %>%
+  filter(year == 2007)
+# lets have a look at the data
+data_gm
+```
+
+Plotting this data looks as follows
+
+```{r gapminder-continents-plot}
+# assign data and variable
+ggplot(data = data_gm,
+       aes(y = lifeExp, x = continent)) +
+  geom_point() +
+  labs(title = "Life Expentancy and Continents",
+       x = "Continent",
+       y = "Life Expectancy")
+```
+
+We need to break down the continent category into columns of dummy variables
+
+```{r gapminder-dummies}
+# using pivot_wider() to make dummies
+data_gm_dummies = data_gm %>%
+  pivot_wider(names_from = continent, # get the names
+              values_from = continent,
+              values_fn = length,
+              values_fill = 0) %>%
+  select(c("country", 
+           "lifeExp",
+           "Asia",
+           "Europe",
+           "Africa",
+           "Americas",
+           "Oceania")) # select the continent cols
+# lets now have a look
+data_gm_dummies
+```
+
+Now let us throw together a linear model with this info
+
+```{r gapminder-linear-model}
+# use the lm function
+# use -1 to convert continents to dummies
+model = lm(data = data_gm_dummies,
+            formula = lifeExp ~ 
+             Asia + 
+             Europe + 
+             Africa + 
+             Americas + 
+             Oceania)
+# export summary of regression
+summary(model)
+```
+
+Looking at these results, what is interesting is the intercept represents Oceania, and each continent coefficient below represents the effect on life expectancy each being in each continent has relative to Oceania.
+
+We can also extract a conventional ANOVA table from the model
+
+```{r gapminder-anova}
+# generate anova table
+anova(model)
+```
+
+It appears that the difference between the Americas and Oceania is not that significant!
