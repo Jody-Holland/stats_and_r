@@ -9,7 +9,7 @@
     
         <meta name="date" content="2023-03-20" />
     
-    <title>Index</title>
+    <title>Day 1 (ES)</title>
     <!-- Material Design fonts -->
     <style type="text/css">@font-face {
 font-family: 'Roboto';
@@ -852,6 +852,75 @@ font-weight: bold;
 </script>
     
     
+        <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+          background-color: #ffffff;
+          color: #a0a0a0;
+        }
+      pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+      div.sourceCode
+        { color: #1f1c1b; background-color: #ffffff; }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+      code span { color: #1f1c1b; } /* Normal */
+      code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+      code span.an { color: #ca60ca; } /* Annotation */
+      code span.at { color: #0057ae; } /* Attribute */
+      code span.bn { color: #b08000; } /* BaseN */
+      code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+      code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+      code span.ch { color: #924c9d; } /* Char */
+      code span.cn { color: #aa5500; } /* Constant */
+      code span.co { color: #898887; } /* Comment */
+      code span.cv { color: #0095ff; } /* CommentVar */
+      code span.do { color: #607880; } /* Documentation */
+      code span.dt { color: #0057ae; } /* DataType */
+      code span.dv { color: #b08000; } /* DecVal */
+      code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+      code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+      code span.fl { color: #b08000; } /* Float */
+      code span.fu { color: #644a9b; } /* Function */
+      code span.im { color: #ff5500; } /* Import */
+      code span.in { color: #b08000; } /* Information */
+      code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+      code span.op { color: #1f1c1b; } /* Operator */
+      code span.ot { color: #006e28; } /* Other */
+      code span.pp { color: #006e28; } /* Preprocessor */
+      code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+      code span.sc { color: #3daee9; } /* SpecialChar */
+      code span.ss { color: #ff5500; } /* SpecialString */
+      code span.st { color: #bf0303; } /* String */
+      code span.va { color: #0057ae; } /* Variable */
+      code span.vs { color: #bf0303; } /* VerbatimString */
+      code span.wa { color: #bf0303; } /* Warning */
+    </style>
     
     
     <!-- tabsets -->
@@ -945,7 +1014,7 @@ font-weight: bold;
       <div class="row">
         <div class="col-xs-3">
 	  	  <div id="header">
-	    <h1 class="title">Index</h1>
+	    <h1 class="title">Day 1 (ES)</h1>
 	    	    	    	    <h4 class="author">Jody Holland</h4>
 	    	    	    	    <h4 class="date">2023-03-20</h4>
 	    	  </div>
@@ -960,9 +1029,17 @@ font-weight: bold;
 <nav class="col-xs-3 menu">
 <div id="toc">
 <ul>
-<li><a href="#main-page" id="toc-main-page">Main Page</a></li>
-<li><a href="#versión-española" id="toc-versión-española">Versión
-Española</a></li>
+<li><a href="#curso-acelerado-de-r-y-estadística" id="toc-curso-acelerado-de-r-y-estadística">Curso acelerado de R y
+Estadística</a></li>
+<li><a href="#por-qué-stats-por-qué-r" id="toc-por-qué-stats-por-qué-r">¿Por qué Stats, por qué R?</a></li>
+<li><a href="#qué-vamos-a-hacer" id="toc-qué-vamos-a-hacer">¿Qué vamos a
+hacer?</a></li>
+<li><a href="#proceso-de-análisis-cuantitativo" id="toc-proceso-de-análisis-cuantitativo">Proceso de análisis
+cuantitativo</a></li>
+<li><a href="#conceptos-básicos" id="toc-conceptos-básicos">Conceptos
+básicos</a></li>
+<li><a href="#general-linear-model-modelo-lineal-general" id="toc-general-linear-model-modelo-lineal-general">General Linear Model
+(Modelo lineal general)</a></li>
 </ul>
 </div>
 </nav>
@@ -974,34 +1051,365 @@ Española</a></li>
 <div class="row">
 
 <div class="col-xs-10">
-<div id="main-page" class="section level1">
-<h1>Main Page</h1>
-<div id="notes-for-r-and-stats-revision-2023" class="section level2">
-<h2>Notes for R and Stats Revision 2023</h2>
-<p><strong>By Jody Holland for class by Professor Fernando Tuya at the
-University of Las Palmas de Gran Canaria. There may be typos, it may not
-always make sense, but hopefully it will be a useful reference resource
-in the future.The aim of this week for me is to brush up on my R and to
-push my skills of version control and webdesign in RStudio. I may also
-do some fun stuff with Julia.</strong></p>
-<div id="day-one" class="section level3">
-<h3><a href="day_1.html"><strong>Day One</strong></a></h3>
+<div id="curso-acelerado-de-r-y-estadística" class="section level1">
+<h1>Curso acelerado de R y Estadística</h1>
+<p><em>Primar Día, 20/03/2023 (¡Equinoxio de primavera!)</em></p>
+</div>
+<div id="por-qué-stats-por-qué-r" class="section level1">
+<h1>¿Por qué Stats, por qué R?</h1>
+<ul>
+<li>Las estadísticas son dolorosas, pero un buen conocimiento de R las
+hace más fáciles</li>
+<li>No tienes que saber mucho sobre cómo funcionan los modelos
+estadísticos, sólo cómo usarlos</li>
+<li>Centrémonos en los modelos estadísticos que son intuitivos, pero
+tienen mucho peso conceptual:
+<ul>
+<li>No hace falta ser mecánico para conducir un coche, tenemos que
+encontrar esa “zona de Ricitos de Oro” entre las matemáticas y la
+operacionalización.</li>
+</ul></li>
+<li>Es importante que el trabajo sea repetible:
+<ul>
+<li>El valor de los datos abiertos (la mayoría de los artículos de hoy
+en día quieren ver tu código y tus datos).</li>
+</ul></li>
+<li>La comunidad de R es increíble. Muchos paquetes e innovación
+impulsada por la comunidad.
+<ul>
+<li>Millones de paquetes, quizá demasiados</li>
+</ul></li>
+<li>Aprender R es difícil. Al principio te parecerá raro, pero al final
+te encontrarás con una curva ascendente muy rápida.
+<ul>
+<li><p>Aunque tienes que trabajar perra. R es difícil y requiere
+autoaprendizaje y disciplina.</p></li>
+<li><p>Usa Youtube (y TikTok) xxx</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="qué-vamos-a-hacer" class="section level1">
+<h1>¿Qué vamos a hacer?</h1>
+<ul>
+<li><p>Vamos a ver varias familias de modelos estadísticos:</p>
+<ul>
+<li><p>Modelo Lineal General:</p>
+<ul>
+<li><p>ANOVA</p></li>
+<li><p>ANCOVA</p></li>
+<li><p>Simple (bivariante)</p></li>
+<li><p>Regresión múltiple (MCO)</p></li>
+</ul></li>
+<li><p>Modelo lineal generalizado:</p>
+<ul>
+<li><p>Poisson</p></li>
+<li><p>Logístico</p></li>
+<li><p>MLG multivariante</p></li>
+</ul></li>
+<li><p>Modelos mixtos Selección de modelos:</p>
+<ul>
+<li><p>AIC</p></li>
+<li><p>BIC</p></li>
+<li><p>Pruebas de ajuste/robustez</p></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="proceso-de-análisis-cuantitativo" class="section level1">
+<h1>Proceso de análisis cuantitativo</h1>
+<ol style="list-style-type: decimal">
+<li><p>Salga, investigue y haga inferencias.</p></li>
+<li><p>Construir algunas tesis, observando cómo unas fuerzas influyen en
+otras.</p></li>
+<li><p>Las hipótesis conducen a su antítesis, la hipótesis nula
+(H<sub>o</sub>), que es la afirmación de que la relación predicha no se
+produce.</p></li>
+<li><p>Recoger datos a través de mediciones cuantitativas</p></li>
+<li><p>Almacenar los datos en una base de datos</p></li>
+<li><p>Aplicar modelos estadísticos para comprobar la hipótesis</p></li>
+<li><p>En función del resultado, aceptar o rechazar la hipótesis
+nula</p></li>
+</ol>
+<p><em>Cuando se inicia un nuevo estudio hay que plantearse muchas
+cuestiones en relación con la recogida de datos, pensando en el espacio,
+el lapso de tiempo y la forma de realizar las observaciones. Todo esto
+se incluye y justifica en la “sección de diseño experimental”.</em></p>
+</div>
+<div id="conceptos-básicos" class="section level1">
+<h1>Conceptos básicos</h1>
+<p>A continuación se presentan algunos conceptos básicos de
+estadística.</p>
+<div id="inferencia-estadística" class="section level2">
+<h2>Inferencia estadística</h2>
+<p>Necesitamos la estadística porque no podemos hacer un muestreo
+universal de todos los conjuntos de datos posibles, sólo podemos hacer
+una subsección y extrapolar nuestros resultados</p>
+</div>
+<div id="muestreo-aleatorio" class="section level2">
+<h2>Muestreo aleatorio</h2>
+<p>En teoría cada punto de datos debería ser independiente, debería ser
+aleatorio en la forma en que se seleccionan, independiente del sesgo del
+investigador. En la práctica esto es muy difícil.</p>
+</div>
+<div id="replicar" class="section level2">
+<h2>Replicar</h2>
+<p>El nivel más bajo de su diseño. Yo lo llamaría la “unidad de
+análisis”.</p>
+</div>
+<div id="variables" class="section level2">
+<h2>Variables</h2>
+<p>Cualquier tipo de medida que utilice en sus datos:</p>
+<ul>
+<li><p>Variable dependiente: Variable de respuesta: Y</p></li>
+<li><p>Variable independiente: Variable predictora: Variable
+explicativa: X</p></li>
+<li><p>Estas variables pueden ser categorías; hay formas de hacerlas
+pseudonuméricas, como utilizar variables ficticias (asignar a cada punto
+de datos un 1 o un 0 para indicar si pertenece a un grupo
+determinado).</p></li>
+<li><p>Las variables categóricas pueden configurarse en “tratamientos”
+que denotan varias agrupaciones de variables categóricas</p></li>
+</ul>
+</div>
+<div id="error" class="section level2">
+<h2>Error</h2>
+<p>El grado en que nuestros predictores no pueden determinar la variable
+dependiente.</p>
+</div>
+<div id="unidad-experimental" class="section level2">
+<h2>Unidad experimental</h2>
+<p>Diferentes áreas o periodos de tiempo en los que se recogen los
+datos. Disponer de varias áreas en las que se recogen los datos
+demuestra la replicabilidad del experimento.</p>
+</div>
+<div id="confounding-relationships-relaciones-de-confusión" class="section level2">
+<h2>Confounding relationships (Relaciones de confusión)</h2>
+<p>A veces puede parecer que existe una relación en los resultados. Sin
+embargo, es posible que tanto la variable dependiente como la
+independiente estén causadas mutuamente por otra tercera variable no
+incluida. Las variables de confusión son difíciles de encontrar, hay que
+investigar mucho y aceptar las críticas sin reservas.</p>
+<p>##Sample (Muestreo)</p>
+<p>El muestreo consiste en determinar qué proporción de la población hay
+que muestrear para lograr una determinada certeza en la capacidad de
+extrapolar los resultados a una población más amplia.</p>
+<p>En general, cuanto menor sea el tamaño de la muestra, mayor será el
+error típico.</p>
+<p>Sin embargo, la relación entre el tamaño de la muestra y el error
+típico no es lineal, sino que hay rendimientos decrecientes al aumentar
+el tamaño de la muestra y mejorar la precisión.</p>
+<p>También debemos considerar la escala de las diferencias en nuestros
+resultados. Si nuestra muestra es pequeña, pero las diferencias que
+encontramos entre los grupos son grandes, entonces quizá esté bien tener
+una muestra más pequeña. Sin embargo, si las diferencias en los
+resultados son más matizadas, para concluir realmente que las ligeras
+diferencias que existen pueden extrapolarse a la población, necesitamos
+una muestra grande.</p>
+</div>
+<div id="confianza" class="section level2">
+<h2>Confianza</h2>
+<p>El muestreo desempeña un papel importante a la hora de determinar la
+confianza de nuestros resultados y las inferencias subsiguientes. En
+muchos círculos, la confianza se denota utilizando alfa/⍺. ⍺ de 0,05
+significa 95% de confianza, ⍺ de 0,01 significa 99% y así
+sucesivamente.</p>
+</div>
+<div id="p-valyes-valores-p" class="section level2">
+<h2>P Valyes (Valores P)</h2>
+<p>Tenga cuidado con el uso excesivo del valor P (la probabilidad de que
+pueda rechazar la hipótesis nula). Úselo en el contexto del tamaño del
+efecto. Un tamaño del efecto P + H alto… entonces está cocinado. Un
+tamaño del efecto pequeño, sin embargo, podría significar que se están
+sobreestimando los resultados basados en un muestreo amplio.</p>
 </div>
 </div>
-</div>
-<div id="versión-española" class="section level1">
-<h1>Versión Española</h1>
-<div id="notas-para-r-y-stats-revisión-2023" class="section level2">
-<h2>Notas para R y Stats Revisión 2023</h2>
-<p>**Por Jody Holland para la clase del profesor Fernando Tuya en la
-Universidad de Las Palmas de Gran Canaria. El objetivo de esta semana
-para mí es repasar mi R y para empujar mis habilidades de control de
-versiones y diseño web en RStudio. También puedo hacer algunas cosas
-divertidas con Julia.</p>
-<div id="primar-día" class="section level3">
-<h3><a href="day_1_es.html"><strong>Primar Día</strong></a></h3>
-</div>
-</div>
+<div id="general-linear-model-modelo-lineal-general" class="section level1">
+<h1>General Linear Model (Modelo lineal general)</h1>
+<p>El Modelo Lineal General rompe algunas de las diferencias entre
+variables independientes continuas y categóricas en las pruebas
+estadísticas.</p>
+<p>Tradicionalmente, existen claras diferencias entre ANOVA y OLS. En
+OLS tanto X como Y son continuas, pero en ANOVA X es categórica. Sin
+embargo, si codifica las categorías en ANOVA como “dummy variables”
+(variables ficticias) y luego hace un OLS. Esto produce resultados muy
+similares a OLS</p>
+<table>
+<caption>Antes de la transformación en variables ficticias</caption>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Category</th>
+<th>Height</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Tree</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Tree</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Lamp</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Tras la transformación en variables ficticias</caption>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Tree</th>
+<th>Lamp</th>
+<th>Height</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>0</td>
+<td>1</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>Entonces usted puede aplastar esto en una regresión multivariante
+estándar así:</p>
+<p><span class="math display">\[
+height = c + tree + lamp + e
+\]</span></p>
+<p>He aquí un ejemplo que utiliza la variable categórica continente en
+los datos de gapminder y su efecto en la esperanza de vida mediante la
+función lm()</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># carga tidyverse</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># carga gapminder para 2007</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data_gm <span class="ot">=</span> gapminder<span class="sc">::</span>gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ver los datos</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>data_gm</span></code></pre></div>
+<pre><code>## # A tibble: 142 × 6
+##    country     continent  year lifeExp       pop gdpPercap
+##    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;     &lt;int&gt;     &lt;dbl&gt;
+##  1 Afghanistan Asia       2007    43.8  31889923      975.
+##  2 Albania     Europe     2007    76.4   3600523     5937.
+##  3 Algeria     Africa     2007    72.3  33333216     6223.
+##  4 Angola      Africa     2007    42.7  12420476     4797.
+##  5 Argentina   Americas   2007    75.3  40301927    12779.
+##  6 Australia   Oceania    2007    81.2  20434176    34435.
+##  7 Austria     Europe     2007    79.8   8199783    36126.
+##  8 Bahrain     Asia       2007    75.6    708573    29796.
+##  9 Bangladesh  Asia       2007    64.1 150448339     1391.
+## 10 Belgium     Europe     2007    79.4  10392226    33693.
+## # … with 132 more rows</code></pre>
+<p>La representación gráfica de estos datos es la siguiente</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data_gm,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">y =</span> lifeExp, <span class="at">x =</span> continent)) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Life Expentancy and Continents&quot;</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Continent&quot;</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Life Expectancy&quot;</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" width="576" /></p>
+<p>Necesidad de desglosar la categoría de continente en columnas de
+variables ficticias</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># usando pivot_wider() para hacer variables ficticias</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>data_gm_dummies <span class="ot">=</span> data_gm <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> continent,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> continent,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_fn =</span> length,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_fill =</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">&quot;country&quot;</span>, </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;lifeExp&quot;</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;Asia&quot;</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;Europe&quot;</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;Africa&quot;</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;Americas&quot;</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;Oceania&quot;</span>))</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ver los datos</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>data_gm_dummies</span></code></pre></div>
+<pre><code>## # A tibble: 142 × 7
+##    country     lifeExp  Asia Europe Africa Americas Oceania
+##    &lt;fct&gt;         &lt;dbl&gt; &lt;int&gt;  &lt;int&gt;  &lt;int&gt;    &lt;int&gt;   &lt;int&gt;
+##  1 Afghanistan    43.8     1      0      0        0       0
+##  2 Albania        76.4     0      1      0        0       0
+##  3 Algeria        72.3     0      0      1        0       0
+##  4 Angola         42.7     0      0      1        0       0
+##  5 Argentina      75.3     0      0      0        1       0
+##  6 Australia      81.2     0      0      0        0       1
+##  7 Austria        79.8     0      1      0        0       0
+##  8 Bahrain        75.6     1      0      0        0       0
+##  9 Bangladesh     64.1     1      0      0        0       0
+## 10 Belgium        79.4     0      1      0        0       0
+## # … with 132 more rows</code></pre>
+<p>Ahora elabora un modelo lineal con esta información</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">=</span> <span class="fu">lm</span>(<span class="at">data =</span> data_gm_dummies,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">formula =</span> lifeExp <span class="sc">~</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>             Asia <span class="sc">+</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>             Europe <span class="sc">+</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>             Africa <span class="sc">+</span> </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>             Americas <span class="sc">+</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>             Oceania)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = lifeExp ~ Asia + Europe + Africa + Americas + Oceania, 
+##     data = data_gm_dummies)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -26.9005  -4.0399   0.2565   3.3840  21.6360 
+## 
+## Coefficients: (1 not defined because of singularities)
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   80.720      5.229  15.438  &lt; 2e-16 ***
+## Asia          -9.991      5.385  -1.855   0.0657 .  
+## Europe        -3.071      5.400  -0.569   0.5705    
+## Africa       -25.913      5.328  -4.863 3.12e-06 ***
+## Americas      -7.111      5.434  -1.309   0.1928    
+## Oceania           NA         NA      NA       NA    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 7.395 on 137 degrees of freedom
+## Multiple R-squared:  0.6355, Adjusted R-squared:  0.6249 
+## F-statistic: 59.71 on 4 and 137 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Observando estos resultados, lo interesante es que el intercepto
+representa a Oceanía, y cada coeficiente de continente representa el
+efecto sobre la esperanza de vida que tiene cada ser de cada continente
+en relación con Oceanía.</p>
+<p>También podemos extraer una tabla ANOVA convencional del modelo</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(model)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: lifeExp
+##            Df Sum Sq Mean Sq  F value    Pr(&gt;F)    
+## Asia        1  595.3   595.3  10.8863  0.001235 ** 
+## Europe      1 5732.0  5732.0 104.8280 &lt; 2.2e-16 ***
+## Africa      1 6639.8  6639.8 121.4290 &lt; 2.2e-16 ***
+## Americas    1   93.7    93.7   1.7127  0.192825    
+## Residuals 137 7491.2    54.7                       
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>It appears that the difference between the Americas and Oceania is
+not that significant!</p>
 </div>
 </div>
 

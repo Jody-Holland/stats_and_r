@@ -9,7 +9,7 @@
     
         <meta name="date" content="2023-03-20" />
     
-    <title>Day 1</title>
+    <title>Day One</title>
     <!-- Material Design fonts -->
     <style type="text/css">@font-face {
 font-family: 'Roboto';
@@ -1014,7 +1014,7 @@ font-weight: bold;
       <div class="row">
         <div class="col-xs-3">
 	  	  <div id="header">
-	    <h1 class="title">Day 1</h1>
+	    <h1 class="title">Day One</h1>
 	    	    	    	    <h4 class="author">Jody Holland</h4>
 	    	    	    	    <h4 class="date">2023-03-20</h4>
 	    	  </div>
@@ -1053,10 +1053,7 @@ Concepts</a></li>
 <div class="col-xs-10">
 <div id="r-and-statistics-crash-course" class="section level1">
 <h1>R and Statistics Crash Course</h1>
-<p><em>Day One Notes, 20/03/2023 (Spring Equinox!)</em></p>
-<p>Notes by Jody Holland for classes by Prof. Fernando Tuya. There may
-be typos, it may not always make sense, but hopefully it will be a
-useful reference resource in the future.</p>
+<p><em>Day One, 20/03/2023 (Spring Equinox!)</em></p>
 </div>
 <div id="why-stats-why-r" class="section level1">
 <h1>Why Stats, Why R?</h1>
@@ -1358,17 +1355,16 @@ variables</p>
 ## 10 Belgium        79.4     0      1      0        0       0
 ## # … with 132 more rows</code></pre>
 <p>Now let us throw together a linear model with this info</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use the lm function</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># use -1 to convert continents to dummies</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>model <span class="ot">=</span> <span class="fu">lm</span>(<span class="at">data =</span> data_gm_dummies,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">formula =</span> lifeExp <span class="sc">~</span> </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>             Asia <span class="sc">+</span> </span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>             Europe <span class="sc">+</span> </span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>             Africa <span class="sc">+</span> </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>             Americas <span class="sc">+</span> </span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>             Oceania)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># export summary of regression</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use the lm() function</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">=</span> <span class="fu">lm</span>(<span class="at">data =</span> data_gm_dummies,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">formula =</span> lifeExp <span class="sc">~</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>             Asia <span class="sc">+</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>             Europe <span class="sc">+</span> </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>             Africa <span class="sc">+</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>             Americas <span class="sc">+</span> </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>             Oceania)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># export summary of regression</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = lifeExp ~ Asia + Europe + Africa + Americas + Oceania, 

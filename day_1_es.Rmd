@@ -1,0 +1,230 @@
+---
+title: "Primar Día"
+author: "Jody Holland"
+date: "2023-03-20"
+output: rmdformats::material
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(error = FALSE,
+                      warning = FALSE,
+                      message = FALSE)
+```
+# Curso acelerado de R y Estadística
+
+*Primar Día, 20/03/2023 (¡Equinoxio de primavera!)*
+
+# ¿Por qué Stats, por qué R?
+
+- Las estadísticas son dolorosas, pero un buen conocimiento de R las hace más fáciles
+- No tienes que saber mucho sobre cómo funcionan los modelos estadísticos, sólo cómo usarlos
+- Centrémonos en los modelos estadísticos que son intuitivos, pero tienen mucho peso conceptual:
+    - No hace falta ser mecánico para conducir un coche, tenemos que encontrar esa "zona de Ricitos de Oro" entre las matemáticas y la operacionalización.
+- Es importante que el trabajo sea repetible:
+    - El valor de los datos abiertos (la mayoría de los artículos de hoy en día quieren ver tu código y tus datos).
+- La comunidad de R es increíble. Muchos paquetes e innovación impulsada por la comunidad.
+    - Millones de paquetes, quizá demasiados
+- Aprender R es difícil. Al principio te parecerá raro, pero al final te encontrarás con una curva ascendente muy rápida.
+    - Aunque tienes que trabajar perra. R es difícil y requiere autoaprendizaje y disciplina.
+
+    - Usa Youtube (y TikTok) xxx
+
+# ¿Qué vamos a hacer?
+
+- Vamos a ver varias familias de modelos estadísticos:
+
+    - Modelo Lineal General:
+
+        - ANOVA
+
+        - ANCOVA
+
+        - Simple (bivariante)
+
+        - Regresión múltiple (MCO)
+
+    - Modelo lineal generalizado:
+
+        - Poisson
+
+        - Logístico
+
+        - MLG multivariante
+
+    - Modelos mixtos Selección de modelos:
+
+        - AIC
+
+        - BIC
+
+        - Pruebas de ajuste/robustez
+
+# Proceso de análisis cuantitativo
+
+1.  Salga, investigue y haga inferencias.
+
+2.  Construir algunas tesis, observando cómo unas fuerzas influyen en otras.
+
+3.  Las hipótesis conducen a su antítesis, la hipótesis nula (H~o~), que es la afirmación de que la relación predicha no se produce.
+
+4.  Recoger datos a través de mediciones cuantitativas
+
+5.  Almacenar los datos en una base de datos
+
+6.  Aplicar modelos estadísticos para comprobar la hipótesis
+
+7.  En función del resultado, aceptar o rechazar la hipótesis nula
+
+*Cuando se inicia un nuevo estudio hay que plantearse muchas cuestiones en relación con la recogida de datos, pensando en el espacio, el lapso de tiempo y la forma de realizar las observaciones. Todo esto se incluye y justifica en la "sección de diseño experimental".*
+
+# Conceptos básicos
+
+A continuación se presentan algunos conceptos básicos de estadística.
+
+## Inferencia estadística
+
+Necesitamos la estadística porque no podemos hacer un muestreo universal de todos los conjuntos de datos posibles, sólo podemos hacer una subsección y extrapolar nuestros resultados
+
+## Muestreo aleatorio
+
+En teoría cada punto de datos debería ser independiente, debería ser aleatorio en la forma en que se seleccionan, independiente del sesgo del investigador. En la práctica esto es muy difícil.
+
+## Replicar
+
+El nivel más bajo de su diseño. Yo lo llamaría la "unidad de análisis".
+
+## Variables
+
+Cualquier tipo de medida que utilice en sus datos:
+
+- Variable dependiente: Variable de respuesta: Y
+
+- Variable independiente: Variable predictora: Variable explicativa: X
+
+- Estas variables pueden ser categorías; hay formas de hacerlas pseudonuméricas, como utilizar variables ficticias (asignar a cada punto de datos un 1 o un 0 para indicar si pertenece a un grupo determinado).
+
+- Las variables categóricas pueden configurarse en "tratamientos" que denotan varias agrupaciones de variables categóricas
+
+## Error
+
+El grado en que nuestros predictores no pueden determinar la variable dependiente.
+
+## Unidad experimental
+
+Diferentes áreas o periodos de tiempo en los que se recogen los datos. Disponer de varias áreas en las que se recogen los datos demuestra la replicabilidad del experimento.
+
+## Confounding relationships (Relaciones de confusión)
+
+A veces puede parecer que existe una relación en los resultados. Sin embargo, es posible que tanto la variable dependiente como la independiente estén causadas mutuamente por otra tercera variable no incluida. Las variables de confusión son difíciles de encontrar, hay que investigar mucho y aceptar las críticas sin reservas.
+
+##Sample (Muestreo)
+
+El muestreo consiste en determinar qué proporción de la población hay que muestrear para lograr una determinada certeza en la capacidad de extrapolar los resultados a una población más amplia.
+
+En general, cuanto menor sea el tamaño de la muestra, mayor será el error típico.
+
+Sin embargo, la relación entre el tamaño de la muestra y el error típico no es lineal, sino que hay rendimientos decrecientes al aumentar el tamaño de la muestra y mejorar la precisión.
+
+También debemos considerar la escala de las diferencias en nuestros resultados. Si nuestra muestra es pequeña, pero las diferencias que encontramos entre los grupos son grandes, entonces quizá esté bien tener una muestra más pequeña. Sin embargo, si las diferencias en los resultados son más matizadas, para concluir realmente que las ligeras diferencias que existen pueden extrapolarse a la población, necesitamos una muestra grande.
+
+## Confianza
+
+El muestreo desempeña un papel importante a la hora de determinar la confianza de nuestros resultados y las inferencias subsiguientes. En muchos círculos, la confianza se denota utilizando alfa/⍺. ⍺ de 0,05 significa 95% de confianza, ⍺ de 0,01 significa 99% y así sucesivamente.
+
+## P Valyes (Valores P)
+
+Tenga cuidado con el uso excesivo del valor P (la probabilidad de que pueda rechazar la hipótesis nula). Úselo en el contexto del tamaño del efecto. Un tamaño del efecto P + H alto... entonces está cocinado. Un tamaño del efecto pequeño, sin embargo, podría significar que se están sobreestimando los resultados basados en un muestreo amplio.
+
+# General Linear Model (Modelo lineal general)
+
+El Modelo Lineal General rompe algunas de las diferencias entre variables independientes continuas y categóricas en las pruebas estadísticas.
+
+Tradicionalmente, existen claras diferencias entre ANOVA y OLS. En OLS tanto X como Y son continuas, pero en ANOVA X es categórica. Sin embargo, si codifica las categorías en ANOVA como "dummy variables" (variables ficticias) y luego hace un OLS. Esto produce resultados muy similares a OLS
+
+| ID  | Category | Height |
+|-----|----------|--------|
+| 1   | Tree     | 10     |
+| 2   | Tree     | 6      |
+| 3   | Lamp     | 8      |
+
+: Antes de la transformación en variables ficticias
+
+| ID  | Tree | Lamp | Height |
+|-----|------|------|--------|
+| 1   | 1    | 0    | 10     |
+| 2   | 1    | 0    | 6      |
+| 3   | 0    | 1    | 8      |
+
+: Tras la transformación en variables ficticias
+
+Entonces usted puede aplastar esto en una regresión multivariante estándar así:
+
+$$
+height = c + tree + lamp + e
+$$
+
+He aquí un ejemplo que utiliza la variable categórica continente en los datos de gapminder y su efecto en la esperanza de vida mediante la función lm()
+
+```{r gapminder-continents}
+# carga tidyverse
+library(tidyverse)
+# carga gapminder para 2007
+data_gm = gapminder::gapminder %>%
+  filter(year == 2007)
+# ver los datos
+data_gm
+```
+
+La representación gráfica de estos datos es la siguiente
+
+```{r gapminder-continents-plot}
+ggplot(data = data_gm,
+       aes(y = lifeExp, x = continent)) +
+  geom_point() +
+  labs(title = "Life Expentancy and Continents",
+       x = "Continent",
+       y = "Life Expectancy")
+```
+
+Necesidad de desglosar la categoría de continente en columnas de variables ficticias
+
+```{r gapminder-dummies}
+# usando pivot_wider() para hacer variables ficticias
+data_gm_dummies = data_gm %>%
+  pivot_wider(names_from = continent,
+              values_from = continent,
+              values_fn = length,
+              values_fill = 0) %>%
+  select(c("country", 
+           "lifeExp",
+           "Asia",
+           "Europe",
+           "Africa",
+           "Americas",
+           "Oceania"))
+# ver los datos
+data_gm_dummies
+```
+
+Ahora elabora un modelo lineal con esta información
+
+```{r gapminder-linear-model}
+model = lm(data = data_gm_dummies,
+            formula = lifeExp ~ 
+             Asia + 
+             Europe + 
+             Africa + 
+             Americas + 
+             Oceania)
+summary(model)
+```
+
+Observando estos resultados, lo interesante es que el intercepto representa a Oceanía, y cada coeficiente de continente representa el efecto sobre la esperanza de vida que tiene cada ser de cada continente en relación con Oceanía.
+
+También podemos extraer una tabla ANOVA convencional del modelo
+
+```{r gapminder-anova}
+anova(model)
+```
+
+It appears that the difference between the Americas and Oceania is not that significant!

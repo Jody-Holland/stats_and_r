@@ -9,10 +9,17 @@ output: rmdformats::material
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Notes for R and Stats Revision 2023
-
-By Jody Holland for class by Professor Fernando Tuya at the University of Las Palmas de Gran Canaria. The aim of this week for me is to brush up on my R and to push my skills of version control and webdesign in RStudio. I may also do some fun stuff with Julia.
-
-## [Day One Notes](day_1.html)
+# Main Page
+## Notes for R and Stats Revision 2023
 
 
+**By Jody Holland for class by Professor Fernando Tuya at the University of Las Palmas de Gran Canaria. There may be typos, it may not always make sense, but hopefully it will be a useful reference resource in the future.The aim of this week for me is to brush up on my R and to push my skills of version control and webdesign in RStudio. I may also do some fun stuff with Julia.**
+
+### [**Day One**](day_1.html)
+
+# Versión Española
+## Notas para R y Stats Revisión 2023
+
+**Por Jody Holland para la clase del profesor Fernando Tuya en la Universidad de Las Palmas de Gran Canaria. El objetivo de esta semana para mí es repasar mi R y para empujar mis habilidades de control de versiones y diseño web en RStudio. También puedo hacer algunas cosas divertidas con Julia.
+
+### [**Primar Día**](day_1_es.html)

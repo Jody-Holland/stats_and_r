@@ -1,5 +1,5 @@
 ---
-title: "Day 1"
+title: "Day One"
 author: "Jody Holland"
 date: "2023-03-20"
 output: rmdformats::material
@@ -13,9 +13,7 @@ knitr::opts_chunk$set(error = FALSE,
 
 # R and Statistics Crash Course
 
-*Day One Notes, 20/03/2023 (Spring Equinox!)*
-
-Notes by Jody Holland for classes by Prof. Fernando Tuya. There may be typos, it may not always make sense, but hopefully it will be a useful reference resource in the future.
+*Day One, 20/03/2023 (Spring Equinox!)*
 
 # Why Stats, Why R?
 
@@ -213,8 +211,7 @@ data_gm_dummies
 Now let us throw together a linear model with this info
 
 ```{r gapminder-linear-model}
-# use the lm function
-# use -1 to convert continents to dummies
+# use the lm() function
 model = lm(data = data_gm_dummies,
             formula = lifeExp ~ 
              Asia + 
