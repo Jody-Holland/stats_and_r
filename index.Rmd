@@ -20,6 +20,6 @@ knitr::opts_chunk$set(echo = TRUE)
 # Versión Española
 ## Notas para R y Stats Revisión 2023
 
-**Por Jody Holland para la clase del profesor Fernando Tuya en la Universidad de Las Palmas de Gran Canaria. El objetivo de esta semana para mí es repasar mi R y para empujar mis habilidades de control de versiones y diseño web en RStudio. También puedo hacer algunas cosas divertidas con Julia.
+**Por Jody Holland para la clase del profesor Fernando Tuya en la Universidad de Las Palmas de Gran Canaria. El objetivo de esta semana para mí es repasar mi R y para empujar mis habilidades de control de versiones y diseño web en RStudio. También puedo hacer algunas cosas divertidas con Julia.**
 
 ### [**Primar Día**](day_1_es.html)
