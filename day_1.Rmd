@@ -1,0 +1,97 @@
+---
+title: "Day 1"
+author: "Jody Holland"
+date: "2023-03-20"
+output: rmdformats::downcute
+downcute_theme: "chaos"
+---
+
+```{r setup, include=FALSE}
+```
+
+# Why Stats, Why R?
+
+-   Stats are painful but good R skills makes it easier
+-   You don't have to know much about how the statistical models work, just how to use them
+-   Let us focus on stats models that are intuitive, but have a lot of conceptual weight:
+    -   You don't have to be a mechanic to drive a car, we need to find that "Goldilocks Zone" between the maths and operationalisation
+-   Important that your work is repeatable:
+    -   Values of open data (most papers these days want to see your code and your data)
+-   The community for R is amazing! Lots of packages and community driven innovation!
+    -   Millions of packages, maybe too many
+-   Learning R is tough. It will feel weird at first but will you will hit the speedy upwards curve.
+    -   Though you gotta work bitch. R is hard and requires self-teaching and discipline
+
+    -   Use Youtube (and TikTok) xxx
+
+# What are we doing?
+
+-   We are going to look at several families of stats models:
+
+    -   General Linear Model:
+
+        -   ANOVA
+
+        -   ANCOVA
+
+        -   Simple (bivariate)
+
+        -   Multiple regression (OLS)
+
+    -   Generalised Linear Model:
+
+        -   Poisson
+
+        -   Logistics
+
+        -   Multivariate GLM
+
+    -   Mixed Models! Model Selection:
+
+        -   AIC
+
+        -   BIC
+
+        -   Tests of Fit/Robustness
+
+# Process of Quantitative Analysis
+
+1.  Go outside, do some research, make some inferences.
+
+2.  Build some thesis, looking at how some forces influence another
+
+3.  Write this as a hypothesis, wherein x leads to y. Hypotheses lead to their antithesis the null hypothesis (H~o~), which is the statement wherein the predicted relationship doesn't occur
+
+4.  Collect data through quantitative measurements
+
+5.  Store data in database
+
+6.  Apply statistical models aiming to test the hypothesis
+
+7.  Based on result, accept or reject the null hypothesis
+
+*When you start a new study you have to ask yourself many questions with regards to the collection of data, thinking about the space, time-span, and manner in which you make your observations. This is all included and justified in the "experimental design section".*
+
+# Basic Concepts
+
+-   Statistical Inference
+
+    -   We need stats because we can't do a universal sample of every possible data set, we can only make a subsection an extrapolate our results
+
+-   Random Sampling
+
+    -   In theory every data point should be independent, it should be random in the manner they are selected, independent of researcher bias. In practice this is very hard.
+
+-   Replicate
+
+    -   The lowest level in your design. I would call this the "unit of analysis"
+
+-   Variables
+
+    -   Any type of measurement that you use in your data
+
+        -   Dependent Variable: Response Variable: Y
+
+        -   Independent Variable: Predictor Variable: Explanatory Variable: X
+
+-   
