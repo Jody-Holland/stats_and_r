@@ -11,6 +11,12 @@ knitr::opts_chunk$set(error = FALSE,
                       message = FALSE)
 ```
 
+# R and Statistics Crash Course
+
+*Day One Notes, 20/03/2023 (Spring Equinox!)*
+
+Notes by Jody Holland for classes by Prof. Fernando Tuya. There may be typos, it may not always make sense, but hopefully it will be a useful reference resource in the future.
+
 # Why Stats, Why R?
 
 -   Stats are painful but good R skills makes it easier
