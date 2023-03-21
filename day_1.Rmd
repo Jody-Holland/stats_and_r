@@ -2,7 +2,10 @@
 title: "Day One"
 author: "Jody Holland"
 date: "2023-03-20"
-output: rmdformats::material
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
 ---
 
 ```{r setup, include=FALSE}
@@ -135,101 +138,3 @@ Sampling plays an important role in determining the confidence of our results an
 ## P Values
 
 Be careful about over using the P value (the probability you can reject the null hypothesis). Use it in the context of the effect size. High P + H effect size... then your cooking. Small effect size however could signify P-hacking/overestimating results based on large sampling
-
-# General Linear Model
-
-The General Linear Model breaks down some of the differences between continuous vs categorical independent variables in stats tests.
-
-Traditionally, there is clear differences between ANOVA and OLS. In OLS both X and Y are continuous, but in ANOVA X is categorical. However if you code the categories in ANOVA as dummy variables then do an OLS. This produces results very similar to OLS
-
-| ID  | Category | Height |
-|-----|----------|--------|
-| 1   | Tree     | 10     |
-| 2   | Tree     | 6      |
-| 3   | Lamp     | 8      |
-
-: Before transformation into dummy variables
-
-| ID  | Tree | Lamp | Height |
-|-----|------|------|--------|
-| 1   | 1    | 0    | 10     |
-| 2   | 1    | 0    | 6      |
-| 3   | 0    | 1    | 8      |
-
-: After transformation into dummy variables
-
-Then you can smash this into a standard multivariate regression like so:
-
-$$
-height = c + tree + lamp + e
-$$
-
-Here's an example using the continent categorical variable in gapminder data and it's effect on life expectancy using the lm() function
-
-```{r gapminder-continents}
-# load tidyverse
-library(tidyverse)
-# load gapminder for 2007
-data_gm = gapminder::gapminder %>%
-  filter(year == 2007)
-# lets have a look at the data
-data_gm
-```
-
-Plotting this data looks as follows
-
-```{r gapminder-continents-plot}
-# assign data and variable
-ggplot(data = data_gm,
-       aes(y = lifeExp, x = continent)) +
-  geom_point() +
-  labs(title = "Life Expentancy and Continents",
-       x = "Continent",
-       y = "Life Expectancy")
-```
-
-We need to break down the continent category into columns of dummy variables
-
-```{r gapminder-dummies}
-# using pivot_wider() to make dummies
-data_gm_dummies = data_gm %>%
-  pivot_wider(names_from = continent, # get the names
-              values_from = continent,
-              values_fn = length,
-              values_fill = 0) %>%
-  select(c("country", 
-           "lifeExp",
-           "Asia",
-           "Europe",
-           "Africa",
-           "Americas",
-           "Oceania")) # select the continent cols
-# lets now have a look
-data_gm_dummies
-```
-
-Now let us throw together a linear model with this info
-
-```{r gapminder-linear-model}
-# use the lm() function
-model = lm(data = data_gm_dummies,
-            formula = lifeExp ~ 
-             Asia + 
-             Europe + 
-             Africa + 
-             Americas + 
-             Oceania)
-# export summary of regression
-summary(model)
-```
-
-Looking at these results, what is interesting is the intercept represents Oceania, and each continent coefficient below represents the effect on life expectancy each being in each continent has relative to Oceania.
-
-We can also extract a conventional ANOVA table from the model
-
-```{r gapminder-anova}
-# generate anova table
-anova(model)
-```
-
-It appears that the difference between the Americas and Oceania is not that significant!

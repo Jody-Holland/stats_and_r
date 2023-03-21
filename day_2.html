@@ -12,9 +12,9 @@
 
 <meta name="author" content="Jody Holland" />
 
-<meta name="date" content="2023-03-20" />
+<meta name="date" content="2023-03-21" />
 
-<title>Index</title>
+<title>Day Two</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -31,6 +31,99 @@ document.addEventListener('DOMContentLoaded', function(e) {
 </script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+/* A workaround for https://github.com/jgm/pandoc/issues/4278 */
+a.sourceLine {
+  pointer-events: auto;
+}
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -58,9 +151,9 @@ code span.ot { color: #007020; }
 
 <header>
 <div class="inner">
-<h1 class="title toc-ignore">Index</h1>
+<h1 class="title toc-ignore">Day Two</h1>
 <h3 class="author">Jody Holland</h3>
-<h3 class="date">2023-03-20</h3>
+<h3 class="date">2023-03-21</h3>
 </div>
 </header>
 
@@ -69,37 +162,336 @@ code span.ot { color: #007020; }
 <div id="content-wrapper">
   <div class="inner clearfix">
     <section id="main-content">
-<div id="main-page" class="section level1">
-<h1>Main Page</h1>
-<div id="notes-for-r-and-stats-revision-2023" class="section level2">
-<h2>Notes for R and Stats Revision 2023</h2>
-<p><strong>By Jody Holland for class by Professor Fernando Tuya at the
-University of Las Palmas de Gran Canaria. There may be typos, it may not
-always make sense, but hopefully it will be a useful reference resource
-in the future.The aim of this week for me is to brush up on my R and to
-push my skills of version control and webdesign in RStudio. I may also
-do some fun stuff with Julia.</strong></p>
-<div id="day-one" class="section level3">
-<h3><a href="day_1.html"><strong>Day One</strong></a></h3>
+<div id="r-and-statistics-crash-course" class="section level1">
+<h1>R and Statistics Crash Course</h1>
+<p><em>Day Two, 21/03/2023</em></p>
 </div>
-<div id="day-two" class="section level3">
-<h3><a href="day_2.html"><strong>Day Two</strong></a></h3>
+<div id="in-detail-about-straight-line-linear-model" class="section level1">
+<h1>In detail about Straight Line Linear Model</h1>
+<p>Straight Line Linear Models denote models based on finding straight
+line relationships between a set of predictor variables and a response
+variable. This model is simply expressed as:</p>
+<p><span class="math display">\[
+y_i= a + \beta x_i + \epsilon_i
+\]</span></p>
+<p>In this simple two dimensional bivariate model <span class="math inline">\(i\)</span> denotes each individual replicate/data
+point/row in your data frame, <span class="math inline">\(y\)</span>
+denotes the dependent variable, <span class="math inline">\(a\)</span>
+denotes the intercept <span class="math inline">\(\beta\)</span> denotes
+the coefficient on the predictor/independent variable <span class="math inline">\(x\)</span>, and <span class="math inline">\(\epsilon\)</span> denotes the case specific
+residual error. It is also possible to add more independent variables,
+transforming the model into a multidimensional regression model. This
+looks as follows and determines multiple coefficients for each
+variable:</p>
+<p><span class="math display">\[
+y_i= a + \beta_1 x_i +  \beta_2 x_i +  \beta_3 x_i + \beta_ .... x_i +
+\epsilon_i
+\]</span>This is also called an Ordinary Least Squared Model. This
+explains a method of determining what should be the intercept and the
+coefficients to minimise the distance between the line and the actual
+values (minimising the residuals)</p>
+<p>To evaluate an OLS Linear Model, there are several
+metrics/statistical tools and concepts:</p>
+<div id="r-squared" class="section level2">
+<h2>R-Squared</h2>
+<p>R<sup>2</sup> is a concept that explains the % of the variance in Y
+that is explained by the model. It is calculated as one minus the sum of
+the residuals in the model divided by the sum of the residuals explained
+by mean</p>
+</div>
+<div id="distribution-of-residuals" class="section level2">
+<h2>Distribution of Residuals</h2>
+<p>The residuals should fit a Gaussian distribution, with a clear
+central mean and symmetrical tails. This can be visualised by plotting
+the residuals as a histogram or using a Shapiro Wilk test on the
+residuals.</p>
+</div>
+<div id="scedasticity" class="section level2">
+<h2>Scedasticity</h2>
+<p>This means the manner in which the residuals change as values of
+<span class="math inline">\(x\)</span> increases. In theory the variance
+should not change throughout the model. If they do, then the model may
+be biased (the variance is noticable lower at certain values of <span class="math inline">\(x\)</span>) or heteroscedastic (the variance
+shifts in both directions over the course of changes in the value of
+<span class="math inline">\(x\)</span>).</p>
+</div>
+<div id="multicolinearity" class="section level2">
+<h2>Multicolinearity</h2>
+<p>When using multiple independent/predictor variables, there is a
+change that they themselves may be correlated. This is troublesome as it
+waters down the value of the resulting inferences. An example of a
+potential case of multicolinearity is if you were working with
+country-level data and was using both life expectancy and GDP per capita
+as independent variables. The problem with this is that these two
+variables are highly correlated with one another. There are several ways
+to test for multicolinearity, such as making a bivariate Pearson’s
+Correlation Matrix for the independent variables in your model.</p>
 </div>
 </div>
+<div id="applying-the-simple-straight-line-linear-model" class="section level1">
+<h1>Applying the Simple Straight Line Linear Model</h1>
+<p>The simple straight line model can be applied to many cases beyond
+just using different configurations of continuous (numeric) variables.
+Specifically, this means that the model can be used in several use cases
+in place of ANOVAs and T-Tests. This is through transforming a
+categorical variable in your data into dummy variables (using a binary
+operator 0 or 1 to denote if each case point is a member of that given
+category).</p>
+<p>A detailed example of this process in R in shown below:</p>
+<div id="linear-models-1-factor-anova-and-life-expectancy" class="section level2">
+<h2>Linear Models, 1-Factor ANOVA, and Life Expectancy</h2>
+<p>As mentioned, the General Linear Model breaks down some of the
+differences between continuous vs categorical independent variables in
+stats tests.</p>
+<p>Traditionally, there is clear differences between ANOVA and OLS. In
+OLS both X and Y are continuous, but in ANOVA X is categorical. However
+if you code the categories in ANOVA as dummy variables then do an OLS.
+This produces results very similar to OLS</p>
+<table>
+<caption>Before transformation into dummy variables</caption>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Category</th>
+<th>Height</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Tree</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Tree</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Lamp</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>After transformation into dummy variables</caption>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Tree</th>
+<th>Lamp</th>
+<th>Height</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>0</td>
+<td>1</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>Then you can smash this into a standard multivariate regression like
+so:</p>
+<p><span class="math display">\[
+height = c + tree + lamp + e
+\]</span></p>
+<p>Here’s an example using the continent categorical variable in
+gapminder data and it’s effect on life expectancy using the lm()
+function</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load tidyverse</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># load gapminder for 2007</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data_gm <span class="ot">=</span> gapminder<span class="sc">::</span>gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># lets have a look at the data</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>data_gm</span></code></pre></div>
+<pre><code>## # A tibble: 142 × 6
+##    country     continent  year lifeExp       pop gdpPercap
+##    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;     &lt;int&gt;     &lt;dbl&gt;
+##  1 Afghanistan Asia       2007    43.8  31889923      975.
+##  2 Albania     Europe     2007    76.4   3600523     5937.
+##  3 Algeria     Africa     2007    72.3  33333216     6223.
+##  4 Angola      Africa     2007    42.7  12420476     4797.
+##  5 Argentina   Americas   2007    75.3  40301927    12779.
+##  6 Australia   Oceania    2007    81.2  20434176    34435.
+##  7 Austria     Europe     2007    79.8   8199783    36126.
+##  8 Bahrain     Asia       2007    75.6    708573    29796.
+##  9 Bangladesh  Asia       2007    64.1 150448339     1391.
+## 10 Belgium     Europe     2007    79.4  10392226    33693.
+## # … with 132 more rows</code></pre>
+<p>Plotting this data looks as follows</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assign data and variable</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data_gm,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">y =</span> lifeExp, <span class="at">x =</span> continent)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Life Expentancy and Continents&quot;</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Continent&quot;</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Life Expectancy&quot;</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqAAAAHgCAMAAABNUi8GAAABRFBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZrYzMzM6AAA6ADo6AGY6OgA6Ojo6OmY6ZmY6ZpA6ZrY6kLY6kNtNTU1NTW5NTY5Nbo5NbqtNjshmAABmADpmOgBmOmZmZrZmkJBmkNtmtrZmtttmtv9uTU1uTW5uTY5ubo5ubqtuq6tuq+SOTU2OTW6OTY6Obk2ObquOjm6Ojo6OyP+QOgCQOmaQZgCQZjqQZmaQkLaQtpCQttuQ2/+rbk2rbm6rbo6rjk2rq26rq46ryKur5Mir5OSr5P+2ZgC2Zjq2Zma2kDq2kGa2tpC2ttu229u22/+2/9u2///Ijk3I5KvI///bkDrbkGbbtmbbtpDb25Db27bb29vb2//b/7bb/9vb///kq27k/8jk///r6+v/tmb/yI7/25D/27b/5Kv//7b//8j//9v//+T///8pasiIAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAWbklEQVR4nO2d/38byV2HN7nEMRTaw0pwTPh2zqXBTq5gQ4GLry2lNpTSECNzhbbEuLIjy9r//3dmZlfS2l5ptbuzM5/Zed6vu9iONp9nd/RovkmWkpQQwUl8nwAhq4KgRHQQlIgOghLRQVAiOghKRAdBieggKBGduoKePfyQfXNz+Phjmv5Lkmx8vHNEkmdj3ZpXf/qh5lksyc3hgnnzb99Jks++WMXMLsHNqZGGaSfoqMTD+oLOa7ZNQdCrzewkPl/BXENQa6dGGqaxoCajZLfiiPo1W2Qh6PVO8vlv0vS/X5ScYB0mgvpOqx70RHVR6udPL5LkD9/fO0J3plta4q3rna3RZvLonf672cHq3//iO8mDv1DfqCrquG/VkKx+XNyg8m32r7LHgaqS11126C/nghpyqjtS3Ulq5qP7TH0JxRLLTu3mhwq3dLJAOo0FQbPR9MG7u0foYx5+uN7R/393Mz9kfrC581V2cwvymcHu4obUzCD0sdc7WrzRDFF2qPm7Ry82FuDsu1/rf7iEmQk6L7Hs1PIfl3TFpNu0nYNqS3Tv8qvNReeV5YHp+jbO1CFqwN34ePNzNStdHKzudrW8OtMz1Ww++PC9dqR4gzr4Xfqt7gtPNPUknzGWHXq98+Dr9NPhbN6bGZ3OzjT5Qp+WsfE2s/hXS0/tavPzjwZHPKS9oFebW7duKAqanpi10vWOcetE97azg7NOzpiU/9Nf/+LvN40osxvyg9NsjF+M8EsPnVt0S9D8b08evLvDzAS9Q7t/alebn/35L2s2E7GV9oKOikKmd9YVV5v6r3Nfzh68WxycLaHNssb8i3zZvZEubrjanA2rusB8hC87NJulzhdJdwQ1ZUb3mPkcdF5i2anpmUzyvfcp8ZCOBR2ZudsagqpZwHf/4d9/u1MuqO58ZyN86aF3BF3MQf/re+9bC5r+6kW2GiTuY2OI3y0/ItUuPXph7MvucT3Ezw6+Y0F2QzaxXAg6H9RHyV/OR/jlhy46ztkqXi/RikP8CkGXnprJ//wdqyQvsbJI+jpVC5T5HLQgqOkzt3Sf90fzRVJ+cNEC1fkqiz7qfZ6iMmaRdJXL/QeFEf7+oWqR9IVZ3OTHLPZBt24tkm4xbwu69NRG6uTTm5/P+cRlaguaD4Rbc0FnY+PWnSOSrO/Ktpo+28wHyfnBRQsWezm3LRot9nfOFkPs8kPn20yLZ5LM/tRi/+gOs4S29NQqn3UiXcSCoOnVi+Kz3gVBT7Kdzw019CpJsmXG7OCCBdcvko2PZjP965Nb/Zfefc93yIvbPKWHqnnio/8oPBf/6Yeb87O6WmzUF5n/e1vQpadmNuo/x08vcfJqpluL6mYpe1KVRJBABP30ghE2zgQhqFryJFvVh5EeJghB1TJl2cvmSM/DK+qJ6CAoER0EJaKDoER0EJSIDoIS0akp6O/sxFYdsL3FIihY0VgEBSsai6BgRWMRFKxoLIKCFY1FULCisQgKVjQWQcGKxiIoWNFYBAUrGougYEVjERSsaCyCghWNRVCworEIClY0FkGdJUkSL9ywGxlBXcW8T5UPcNiNjKCugqDNyiCooyBoszII6irMQRuVQVBHoQdtVgZBHQVBm5VBUEdB0GZlENRVPPkZ+NQXQXuODb3jRtCeYxG0Fd1SHbBLg6Ct6JbqgF2ewKe+CAq2i1jruBEUbBdBULBrxs8Qj6DhYQM3pT7XSp0YBY3KFFbxreiW6tRKXKYgaCu6pTq1EpcpCNqKbqlOrYQ+K6tNRdDmdEt16iXwl0/US+gPxzUEHb8cPBum6WR/sH3RC0GjwoY+s6gWdPLmOD3fvpgeHaTnzxG0eaIa4h0KOn59kU7eDtV/6fjVEEGbJnRTPGHX7kGNp+rbNH2isvRosizmLosGm9qmrqiWTT4vt2eC6th4bPyOHrS/WIer+PGXx+nls+GiB0XQZolqDupQ0LzrZA4aJrb/guY96PRoj1V8gNj+C5peDgZPj9kHDRQbgaBlsQOPyhQEbVYGQXuODfyJ3RgFDfwuqxd60FZ0S3VqJfSXT9SmImhzuqU6tRLXjjmCtqJbqlMrkZkS+IQGQXuORdBWdEt1aiUuQRniW9Et1amVuExB0FZ0S3VqJa6xFkFb0S3VqZXQ77J6Cf1qIxQ09GVDvSBoK7qlOkFgGeIblUFQR4lr6ougwWFD78o8YRHUVRC0WRkEdZXAx1pPWAQFKxqLoGBFYxEUrGgsgoIVjUVQsKKxXgX1tK6Nazkd+NX6FJQXoDlI6FeLoO6CoE3KIKizIGiTMh4F5fU9LsIctA3dUp1aiUzQwLERChp6n1IzgV9tjIJGZUro40WMgkZlCoK2oluqUytxmYKgreiW6tRKXKYgaCu6pTq1EtkvB7FIakO3VKdWQu9T4sIiqLvEtCT0LWjIMYL6Pgln6cvV0oN2H662SZn4BA190KsXBG1Ft1QH7NIgaCu6pTpglwZBW9Et1QkCG9UzrAgaHDay5wd6IWjgbVcvCNqsjEdBQx996oXn4puViVDQqJ4UR9DmoU9xkNCv1qeg9Ckuwhy0Dd1SnVphZuEkCNo4UXXcoY8XMQoaVceNoK3oluqEgEXQZmUiFDSqySCCtkhUd1lc2F4IGtddFhcWQcGuz/VARVCw63M9UHshKHPQ/mJ7IWhcd1lcWAQFKxqLoMFh49p+7YWgzEGdJOyn67wKynOObrgeqAjaPHEJGnrHjaBgu0kfBGUO2ltsLwSN7C5jFd+oDII6S9jLaU9YBHWXsE3xhI1QUMbakLAxChrV5gGCtkhUfQqCNivjU9DA265eELRZGQR1FARtVgZBHQVBm5WJUNConsDqv6DnA52DdLI/2L7og6CR7W71XlCdy+2L6dFBev4cQVskbFM8YdcSdPLmOJ28HabjV0MEbZ6wTfGEXUtQ3XOOX18YUdP0icrK/lZ4jKC+T4LUzKp7zHipRvlcUB07jw56ULCVZdYQVLtZ6EERtGHCNsUTdh1BT/d0N9qbOSjL6ZCwawg6/Ub3m9OjvZ6s4sGGhF1D0Hxg780+KNiQsOsM8SWxAw+87cA6wCIoWNFYBAUrGougYEVjERSsaCyCghWNRVCworEIClY0FkHBisYiKFjRWAQFKxqLoGBFYxEUrGgsgoIVjUVQsKKxCOosvJC/URkEdRR+FapZGQR1FARtVgZBHQVBm5UpEfR658E7BLUe5qCNypT2oCdJ8vgjgloNPWizMqWC6l40SbYQ1GIQtFmZJYJmij78gKC2gqDNyiwR9CxJNtRQv2ygtwMPvO1qhjloozJlgt4cJsmu/ma0rAu1Aw+87cA6wJYJer2zdGhHULBuscuGeAQFKwJbKujN4Zb6fwNBwXrHlgp6smEsXWGoHXjgbQfWAbZM0Oud1SskBAXrDOtV0Lg+dphtpkZlyob4M63m9U7XzyTF9XnxbNQ3K1MmaDrSjbnCTwQNBttPQStjhR2XKQjarEx8gjIHDQlbKujVpnGn60USfQrY6jIlgq7eo7cXPvKNrJ2SbaZVsfPoiGvQi+tqu+1BHQkaeNvVCxOaZmVKBF25RY+gDYOgzcqUCKpfS+9ikRR629ULgjYrU9aDVscOPPC2qxnmoI3K+BQ0rrssrqtlH7RFGOLDwZYJenO4pRbyKzebrLDjusviutrOX253spWOVrx3gxV2XHdZXFfbuaBnG/19PSiCBoQtE1T/yoey86zrHjT0tqsXBG1WpkxQ/UtzJ8mqdxCzAw+87eoFQZuVKRO0OnbggbddzUQ1oenH7yQF3nZgHWC9CkqfArayzD1Bz5JZuv69eGZlYKvLLO9BV8UKG0HBVpcpEXSNWGFHJigTmkZlygR19d5MUd1lkT0ceW+m0LAI2qxMiaBsM3URBG1WBkFdJaoJTS/emyn0tqsZBG1UpkxQR+/NFHrb1QtDfLMypYJWxg488LarFwRtVgZBHQVBm5UpFfQsSXZXvRwUQRuEOWijMmWCnjz+7c4u+6BgBWDLBL3eMb8xxzYTWP9YBAUrGls6xJ/pIZ59ULACsKWCsg8KVgq2XNDK2IGznAZbWSY+QdmQDAlbLqj5tY9VL6u3A0dQsJVlygTt94tFEDQkbJmgfX+5HXPQgLAxCgo2IGzpED/S73rT2yEebEjY8h50/qvxuhOdHg2eHqfpZH+wfYGgYN1iS3vQ2zk9SC+3L6ZHB+n5c7uCMhkEW1mmRNCb3xT9nLwdzr6MXw1tCspyGmx1mdIh3sw+b/7WLJLGr3+sh/jx64t08kYN9ekTleX9bY1E9lGIUV2s9dxeJCWPP6o/slX8+OWBtlON8rmgOlYeHHH1oHFdbcdzULNMyl+vnHedix7UmqBxzUERtFmZUkH1B9HMNpkmPzBmdjAHRVAn6aGgN4fJhhnmTU7NED892rO9io/rLovrajteJGUb9fkzSZP9wbNhF/ugcd1lcV1tt4L+Wfb1X/mkOZuJakLTj9eDcpeBrSxzV1DzShHzOhFeLALWPxZBwYrGehWUIR5sZRmPgka2SALbqAyCgpWMRVCworEIClY0tkTQWy+n71JQFklgq8vcFXS9WGHTg4KtLoOgYCVjERSsaKxPQZmDgq0u41PQwNsOrAMsgoIVjS0XlE/5ACsEWyoon/IBVgq2TFA+RAGsGKxXQVnFg60sUzbEO/qUD/ZBwVaXKRPU0ad8ICjY6jKlglbGChtBwVaXuStoPgFFULAisD4FZZEEtrrMXUGzj6Bx83rQwNsOrAPsfUHnH6JADwrWP7ZM0DVihc0cFGx1mbuCmjmomyEeQcFWl6EHBSsZu0JQnuoE6x/rVdDA2w6sAyw9KFjRWJ+CMgcFW10GQcFKxiIoWNHYe4Ly1jdgJWFX9KCdJ7KPQiRtwkY9WJFYBAUrGougYEVjERSsaCyCghWNRVCworEIClY0FkHBisb6FJRnksBWl/EpaOBtB9YBFkHBisYiKFjRWAQFKxqLoGBFY70KyioebGUZj4KyDwq2ugyCgpWMRVCworE+BWUOCra6DD0oWMlYBAUrGougYEVjERSsaCyCghWN9Skoq3iw1WV8Chp424F1gKUHBSsa61NQ5qBgq8sgKFjJWAQFKxrrU1DmoGCry/gUNPC2A+sAi6BgRWO9CsoQD7ayjEdBWSSBrS6DoGAlYxEUrGgsgoIVjV1D0PPBYPBsmE72B9sXCArWLXYNQU8P9J/To4P0/DmCgnWLrRZ0+s2x/jJ5O0zHr4Y2BWWbCWx1mUpB1dA+GByk49cX6eSNdvWJyvL+lpAuslzQ8ZfHuhe93J4JqmPn0RH4gxusA2y1oCanB4se1J6gDPFgK8usK2gHc1AWSWCry1QKqsf26Y+G06M9VvFgnWPX6EHPB4Onxyn7oGB9YNcc4u/GChtBwVaXQVCwkrE+BWUVD7a6jE9BA287sA6wCApWNBZBwYrGehWUOSjYyjIeBWUVD7a6DIKClYxFULCisQgKVjQWQcGKxvoUlFU82OoyPgUNvO3AOsAiKFjRWAQFKxqLoGBFYxEUrGgsgoIVjfUqKNtMYCvLeBSUjXqw1WUQFKxkLIKCFY1FULCisQgKVjQWQcGKxiIoWNFYBAUrGutTUDbqwVaXQVCwkrE+BWWIB1tdBkHBSsYiKFjRWJ+CMgcFW13Gp6CBtx1YB1gEBSsai6BgRWMbCmonag7qA0sCDKt4sCKxCApWNBZBwYrG+hSUfVCw1WV8Chp424F1gEVQsKKxCApWNBZBnYUZd6MyCOoo7Fk0K4OgjoKgzcr4FDSqQQ9Bm5XxKGhkd1lUD0cEbZOw77K4sAgKVjTWp6AMemCry/gUNPC2A+sASw8KVjTWp6DMQcFWl0FQsJKxCApWNBZBwYrGIihY0VgEBSsai6BgRWMRFKxoLIKCFY31KSjPJIGtLuNT0MDbDqwDLIKCFY1FULCisQgKVjQWQcGKxiIoWNFYBAUrGougYEVjERSsaCyCghWNRVCworFrCTo9OkjTyf5g+wJBwbrFriXo+eDASHr+HEHBusWuI+j4+18dpJO3w3T8aoigYJ1i1xB0+s3PVO85fn2RTt4cq5+fqKzqbwmxnxWCnu/p4f1yeyaojp1HR+APbrAOsNWCqq5zeqsHtScoL1gGW1mmUtDzgc5eB3NQfuUDbHWZ6iE+22aaHu3ZXsUjKNjqMusK2sE+KIKCrS6zjqD3YwfOHBRsZRmfggbedmAdYBEUrGgsgoIVjUVQsKKxCApWNBZBwYrGIihY0VgEBSsai6BgRWMRFKxoLIKCFY1FULCisQgKVjQWQcGKxiIoWNHYhoJaiqffDgUbHhZBwYrGIihY0VgEBSsa60dQQtYMghLRQVAiOghKRAdBieg4E9S8Adn0aLCnvl+811OHrPJ0jS4/ic6p45f6jbSeLr3sbqLfvutg5RHtL9yZoJd/s+dMD8PyHacn4e5xV8i5fmfO/Y6v0pWg02/++QcXk/3B059+/6tn/6maU39/bB75qx+DTVnqz38aDPYuB7rPVrBnQ/2O0ffR6oBnXdy52Unk5bU/nVzqLDNBDejVUF/pMLvoydufmJ41+8lm9PseZsSsQXNCdp3j1z82X1pfuCtBx68vTs35jl+aL9l74/6fGgbtP/gz1vTouWqb56b+qXmHvjK0buXFm/dZP4m8vAZ1cqlz2h1B1ZXqi77cVp3C9sXls1kT2MyleU851Zr5+xxnhPw6xy8Nvf2FuxL0XJ2vuaNmTTg/5eyBaJ81/ebY/K8aSLeRwpShV0xXbZxEXj5H2r/UWbI5qBFidokapq99/0A3Q94ENpmXme+nB9nVFQj32roF2ZGganWkx7qCoK+zt3Q8tT/C5qyioPtmBVGKVndtF2uL/CTy8uZ+6uBS57nbg2ZfZmYqifImsMnMBFXdZ9agc8Jpfk/PBW114Y4ENddgHmu3Hlr64W193MtZRUGzB/Ay9OXi/U9tn0ReXo90XVzqAndf0FkP+sY0Qwed93wOmjdo3ntm17k4kZYX7kjQc31XXT5fnLl5+/tXesky/tJyB5azCoLm07EytJazC0Hzk8jLz67b9qXOMzNAX+z5s7zjyuegz80FZj9ZhZ7rNZhaxWcNOiw08pfHC0FbXrgbQac/ymYpP12MPtnK73ww+OOv7K5tZ6yfFQTN1+1l6G4G3tlJHJ/OV/EdXOoi2RxULZYV5a+yGWC+qp68+evZKt76VOYy3wedr+I1IbvOQlfe7sJ5Jqnn6WwV6CgI2vMgKCEdBkGJ6CAoER0EJaKDoHZyliTJg3clN3x6n179XtkN85vJqiCojdwcPv6oJd29d8sqOatvJghqJSfaT2Vo9qUYBG0ZBLWQ651F13lzmCQb2rx/3EyS3Sv1x5ayMP8xu/nhh1s3ezzxAIKgFlLoB28ON8z/V5uqNz17+EHfpAXNf9Q36Y62eDNZFQS1kKvf/zD7dqS6R/3H1eauEXcuaPajuVl1uMWbyaogqIUUNBvpaejMvIKg+Y9n5qPIzaiPoGsFQS1kNge9/pN3VYLmyygEXTcIaiO5d2pSOdKboaN8cnlf0FG+V4qg6wZBbWSxDzpfJOUG6s61IKg5UFlavJmsCoLaycnsmaT5NlNmoLphoyCoufnBu1s3+z512UFQIjoISkQHQYnoICgRHQQlooOgRHQQlIgOghLRQVAiOghKROf/AR+TMvZeTHS9AAAAAElFTkSuQmCC" /><!-- --></p>
+<p>It looks like there is quite a bit of variation in the Africa group
+and a noticeable outlier in Asia (this is Afghanistan). Nonetheless,
+lets press on and accept this example will be weakened. In theory we now
+need to break down the continent category into columns of dummy
+variables, however the lm() function in R does this for us</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use the lm() function</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">=</span> <span class="fu">lm</span>(<span class="at">data =</span> data_gm,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">formula =</span> lifeExp <span class="sc">~</span> continent)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># export summary of regression</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = lifeExp ~ continent, data = data_gm)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -26.9005  -4.0399   0.2565   3.3840  21.6360 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)         54.806      1.025  53.446  &lt; 2e-16 ***
+## continentAmericas   18.802      1.800  10.448  &lt; 2e-16 ***
+## continentAsia       15.922      1.646   9.675  &lt; 2e-16 ***
+## continentEurope     22.843      1.695  13.474  &lt; 2e-16 ***
+## continentOceania    25.913      5.328   4.863 3.12e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 7.395 on 137 degrees of freedom
+## Multiple R-squared:  0.6355, Adjusted R-squared:  0.6249 
+## F-statistic: 59.71 on 4 and 137 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Looking at these results, what is interesting is the intercept
+represents Oceania, and each continent coefficient below represents the
+effect on life expectancy each being in each continent has relative to
+Oceania.</p>
+<p>We can also extract the ANOVA F-ratio from the model</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate anova table</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(model)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: lifeExp
+##            Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+## continent   4 13060.7  3265.2  59.714 &lt; 2.2e-16 ***
+## Residuals 137  7491.2    54.7                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>It appears that maybe continental effects on life expectancy are
+significant, however as mentioned there are problems with this data.</p>
 </div>
-<div id="versión-española" class="section level1">
-<h1>Versión Española</h1>
-<div id="notas-para-r-y-stats-revisión-2023" class="section level2">
-<h2>Notas para R y Stats Revisión 2023</h2>
-<p><strong>Por Jody Holland para la clase del profesor Fernando Tuya en
-la Universidad de Las Palmas de Gran Canaria. El objetivo de esta semana
-para mí es repasar mi R y para empujar mis habilidades de control de
-versiones y diseño web en RStudio. También puedo hacer algunas cosas
-divertidas con Julia.</strong></p>
-<div id="primar-día" class="section level3">
-<h3><a href="day_1_es.html"><strong>Primar Día</strong></a></h3>
+</div>
+<div id="in-detail-about-anova" class="section level1">
+<h1>In detail about ANOVA</h1>
+<p>ANOVA stands for “Analysis of Variance”. In its simplest form, it
+takes one categorical variable such as location, and tests to see if
+there are significant differences between the groupings of this variable
+with regards to a given dependent variable. For instance you may want to
+test if a given population of fish are larger or smaller within the
+waters of a set of islands. In this case, which island the fish are
+sampled from would be your predictor variable, and the size of the fish
+your dependent continuous variable.</p>
+<div id="the-f-statistic-in-anova" class="section level2">
+<h2>The F-Statistic in ANOVA</h2>
+<p>ANOVA works through determining what is known as the F-statistic.
+This relates to the level of variance (mean distance squared between
+data points) between groups <span class="math inline">\(MS_b\)</span> as
+a ratio of the level of variance within groups <span class="math inline">\(MSw\)</span>. If the level of variance between
+groups is larger than the level of variance between groups, then the
+F-statistic will be high, indicating that there is difference between
+the groupings. This ratio is expressed as such:</p>
+<p><span class="math display">\[
+F=\frac{MS_b}{MS_w}
+\]</span></p>
+<p>It is likely that a high F-Statistic will lead to a small and
+significant P-Value</p>
+</div>
+<div id="more-complex-anova" class="section level2">
+<h2>More Complex ANOVA</h2>
+<p>More complex models of ANOVA include more factors/independent
+variables. Going back to our island example, we could also test the
+temperature of sea, classifying it into different categorical groupings
+such as warm, lukewarm etc. To include this data, we would add the value
+as an interaction effect. This is where it is easier to adapt ANOVA to
+an OLS straight line regression model. This would look as follows:</p>
+<p><span class="math display">\[
+Size_i=a+\beta_1Island_i+\beta_2Temperature_i + \beta_3Island_i *
+Temperature_i + \epsilon_i
+\]</span></p>
+<p>Remember that we transform the categorical into dummy variables.
+Thus, the pairings would self sort, as multiplying by zero equals
+zero.</p>
+</div>
+<div id="assumptions-of-anova" class="section level2">
+<h2>Assumptions of ANOVA</h2>
+<ul>
+<li><p>The groups are normally distributed</p>
+<ul>
+<li>This means that the values of <span class="math inline">\(y\)</span>
+within groupings are generally normally distributed</li>
+</ul></li>
+<li><p>The distributions are equal in</p>
+<ul>
+<li>This means that the spread of the values of <span class="math inline">\(y\)</span> within groupings are generally pretty
+consistent</li>
+</ul></li>
+<li><p>Outliers are identified</p>
+<ul>
+<li>There are many reasons for outliers, and many ways to deal with
+them. Important however to check how the data was gathered in case there
+has been an error</li>
+</ul></li>
+</ul>
+</div>
+<div id="working-with-violations-of-anova-assumptions" class="section level2">
+<h2>Working with Violations of ANOVA Assumptions</h2>
+<p>There are several ways to deal with the above assumptions if they are
+violated. However, these days one of the most effect way is not found in
+the abstractions of non-parametric models etc. Rather, the best option
+is to explore applying GLM curved line models.</p>
 </div>
 </div>
+<div id="working-with-ancova" class="section level1">
+<h1>Working with ANCOVA</h1>
+<p>Interaction Effects! Often you will need to control for a continuous
+variable when working with categorical data. Using the OLS straight line
+application to ANOVA this is perfectly possible. To do this, there are
+several steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>Break down your categorical variable into dummy variables (in
+this example whether the island was Jersey or Sark)</p></li>
+<li><p>Build an interaction effect OLS model using interactions between
+the continuous variable (in this case depth) and the categorical
+dummies.<br />
+<br />
+<span class="math display">\[
+Size_i = a + \beta_1Jersey_i + \beta_2Sark_i+\beta_3 Depth_i +
+\beta_4Jersey_i * Depth_i  + \beta_5Sark_i * Depth_i + \epsilon_i
+\]</span></p></li>
+<li><p>Interpret your results and potential visualise how the various
+categorical variables affect the way your continuous variable regresses
+against the dependent (looking at direction and error etc.)</p></li>
+</ol>
+</div>
+<div id="manova" class="section level1">
+<h1>MANOVA</h1>
+<p>Most models you will work on will be using only one dependent
+variable. This means they are univariate. However, sometimes you will
+have to work with multiple dependent variables, seeing how your model
+affects a variety of variable combinations. You could carry out an ANOVA
+for each variable but using MANOVA, you can do this all at once.</p>
 </div>
     </section>
   </div>

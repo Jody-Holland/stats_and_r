@@ -1,0 +1,190 @@
+---
+title: "Day Two"
+author: "Jody Holland"
+date: "2023-03-21"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(error = FALSE,
+                      warning = FALSE,
+                      message = FALSE)
+```
+
+# R and Statistics Crash Course
+
+*Day Two, 21/03/2023*
+
+# In detail about Straight Line Linear Model
+
+Straight Line Linear Models denote models based on finding straight line relationships between a set of predictor variables and a response variable. This model is simply expressed as:
+
+$$
+y_i= a + \beta x_i + \epsilon_i
+$$
+
+In this simple two dimensional bivariate model $i$ denotes each individual replicate/data point/row in your data frame, $y$ denotes the dependent variable, $a$ denotes the intercept $\beta$ denotes the coefficient on the predictor/independent variable $x$, and $\epsilon$ denotes the case specific residual error. It is also possible to add more independent variables, transforming the model into a multidimensional regression model. This looks as follows and determines multiple coefficients for each variable:
+
+$$
+y_i= a + \beta_1 x_i +  \beta_2 x_i +  \beta_3 x_i + \beta_ .... x_i + \epsilon_i
+$$This is also called an Ordinary Least Squared Model. This explains a method of determining what should be the intercept and the coefficients to minimise the distance between the line and the actual values (minimising the residuals)
+
+To evaluate an OLS Linear Model, there are several metrics/statistical tools and concepts:
+
+## R-Squared
+
+R^2^ is a concept that explains the % of the variance in Y that is explained by the model. It is calculated as one minus the sum of the residuals in the model divided by the sum of the residuals explained by mean
+
+## Distribution of Residuals
+
+The residuals should fit a Gaussian distribution, with a clear central mean and symmetrical tails. This can be visualised by plotting the residuals as a histogram or using a Shapiro Wilk test on the residuals.
+
+## Scedasticity
+
+This means the manner in which the residuals change as values of $x$ increases. In theory the variance should not change throughout the model. If they do, then the model may be biased (the variance is noticable lower at certain values of $x$) or heteroscedastic (the variance shifts in both directions over the course of changes in the value of $x$).
+
+## Multicolinearity
+
+When using multiple independent/predictor variables, there is a change that they themselves may be correlated. This is troublesome as it waters down the value of the resulting inferences. An example of a potential case of multicolinearity is if you were working with country-level data and was using both life expectancy and GDP per capita as independent variables. The problem with this is that these two variables are highly correlated with one another. There are several ways to test for multicolinearity, such as making a bivariate Pearson's Correlation Matrix for the independent variables in your model.
+
+# Applying the Simple Straight Line Linear Model
+
+The simple straight line model can be applied to many cases beyond just using different configurations of continuous (numeric) variables. Specifically, this means that the model can be used in several use cases in place of ANOVAs and T-Tests. This is through transforming a categorical variable in your data into dummy variables (using a binary operator 0 or 1 to denote if each case point is a member of that given category).
+
+A detailed example of this process in R in shown below:
+
+## Linear Models, 1-Factor ANOVA, and Life Expectancy
+
+As mentioned, the General Linear Model breaks down some of the differences between continuous vs categorical independent variables in stats tests.
+
+Traditionally, there is clear differences between ANOVA and OLS. In OLS both X and Y are continuous, but in ANOVA X is categorical. However if you code the categories in ANOVA as dummy variables then do an OLS. This produces results very similar to OLS
+
+| ID  | Category | Height |
+|-----|----------|--------|
+| 1   | Tree     | 10     |
+| 2   | Tree     | 6      |
+| 3   | Lamp     | 8      |
+
+: Before transformation into dummy variables
+
+| ID  | Tree | Lamp | Height |
+|-----|------|------|--------|
+| 1   | 1    | 0    | 10     |
+| 2   | 1    | 0    | 6      |
+| 3   | 0    | 1    | 8      |
+
+: After transformation into dummy variables
+
+Then you can smash this into a standard multivariate regression like so:
+
+$$
+height = c + tree + lamp + e
+$$
+
+Here's an example using the continent categorical variable in gapminder data and it's effect on life expectancy using the lm() function
+
+```{r gapminder-continents}
+# load tidyverse
+library(tidyverse)
+# load gapminder for 2007
+data_gm = gapminder::gapminder %>%
+  filter(year == 2007)
+# lets have a look at the data
+data_gm
+```
+
+Plotting this data looks as follows
+
+```{r gapminder-continents-plot}
+# assign data and variable
+ggplot(data = data_gm,
+       aes(y = lifeExp, x = continent)) +
+  geom_point() +
+  labs(title = "Life Expentancy and Continents",
+       x = "Continent",
+       y = "Life Expectancy")
+```
+
+It looks like there is quite a bit of variation in the Africa group and a noticeable outlier in Asia (this is Afghanistan). Nonetheless, lets press on and accept this example will be weakened. In theory we now need to break down the continent category into columns of dummy variables, however the lm() function in R does this for us
+
+```{r gapminder-linear-model}
+# use the lm() function
+model = lm(data = data_gm,
+           formula = lifeExp ~ continent)
+# export summary of regression
+summary(model)
+```
+
+Looking at these results, what is interesting is the intercept represents Oceania, and each continent coefficient below represents the effect on life expectancy each being in each continent has relative to Oceania.
+
+We can also extract the ANOVA F-ratio from the model
+
+```{r gapminder-anova}
+# generate anova table
+anova(model)
+```
+
+It appears that maybe continental effects on life expectancy are significant, however as mentioned there are problems with this data.
+
+# In detail about ANOVA
+
+ANOVA stands for "Analysis of Variance". In its simplest form, it takes one categorical variable such as location, and tests to see if there are significant differences between the groupings of this variable with regards to a given dependent variable. For instance you may want to test if a given population of fish are larger or smaller within the waters of a set of islands. In this case, which island the fish are sampled from would be your predictor variable, and the size of the fish your dependent continuous variable.
+
+## The F-Statistic in ANOVA
+
+ANOVA works through determining what is known as the F-statistic. This relates to the level of variance (mean distance squared between data points) between groups $MS_b$ as a ratio of the level of variance within groups $MSw$. If the level of variance between groups is larger than the level of variance between groups, then the F-statistic will be high, indicating that there is difference between the groupings. This ratio is expressed as such:
+
+$$
+F=\frac{MS_b}{MS_w}
+$$
+
+It is likely that a high F-Statistic will lead to a small and significant P-Value
+
+## More Complex ANOVA
+
+More complex models of ANOVA include more factors/independent variables. Going back to our island example, we could also test the temperature of sea, classifying it into different categorical groupings such as warm, lukewarm etc. To include this data, we would add the value as an interaction effect. This is where it is easier to adapt ANOVA to an OLS straight line regression model. This would look as follows:
+
+$$
+Size_i=a+\beta_1Island_i+\beta_2Temperature_i + \beta_3Island_i * Temperature_i + \epsilon_i
+$$
+
+Remember that we transform the categorical into dummy variables. Thus, the pairings would self sort, as multiplying by zero equals zero.
+
+## Assumptions of ANOVA
+
+-   The groups are normally distributed
+
+    -   This means that the values of $y$ within groupings are generally normally distributed
+
+-   The distributions are equal in
+
+    -   This means that the spread of the values of $y$ within groupings are generally pretty consistent
+
+-   Outliers are identified
+
+    -   There are many reasons for outliers, and many ways to deal with them. Important however to check how the data was gathered in case there has been an error
+
+## Working with Violations of ANOVA Assumptions
+
+There are several ways to deal with the above assumptions if they are violated. However, these days one of the most effect way is not found in the abstractions of non-parametric models etc. Rather, the best option is to explore applying GLM curved line models.
+
+# Working with ANCOVA
+
+Interaction Effects! Often you will need to control for a continuous variable when working with categorical data. Using the OLS straight line application to ANOVA this is perfectly possible. To do this, there are several steps:
+
+1.  Break down your categorical variable into dummy variables (in this example whether the island was Jersey or Sark)
+
+2.  Build an interaction effect OLS model using interactions between the continuous variable (in this case depth) and the categorical dummies.\
+    \
+    $$
+    Size_i = a + \beta_1Jersey_i + \beta_2Sark_i+\beta_3 Depth_i + \beta_4Jersey_i * Depth_i  + \beta_5Sark_i * Depth_i + \epsilon_i
+    $$
+
+3.  Interpret your results and potential visualise how the various categorical variables affect the way your continuous variable regresses against the dependent (looking at direction and error etc.)
+
+# MANOVA
+
+Most models you will work on will be using only one dependent variable. This means they are univariate. However, sometimes you will have to work with multiple dependent variables, seeing how your model affects a variety of variable combinations. You could carry out an ANOVA for each variable but using MANOVA, you can do this all at once.

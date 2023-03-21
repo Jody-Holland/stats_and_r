@@ -2,7 +2,10 @@
 title: "Primar Día"
 author: "Jody Holland"
 date: "2023-03-20"
-output: rmdformats::material
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
 ---
 
 ```{r setup, include=FALSE}
@@ -12,7 +15,7 @@ knitr::opts_chunk$set(error = FALSE,
 ```
 # Curso acelerado de R y Estadística
 
-*Primar Día, 20/03/2023 (¡Equinoxio de primavera!)*
+*Primar Día, 20/03/2023 (¡Equinoxio de  !)*
 
 # ¿Por qué Stats, por qué R?
 
