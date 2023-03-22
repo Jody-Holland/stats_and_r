@@ -72,3 +72,82 @@ We can also plot the results as follows
 ```{r poisson-plot}
 plot(model)
 ```
+
+# Practical
+
+Using the data provided, fit a model and look for relationships
+
+```{r libraries}
+library(tidyverse)
+library(readxl)
+library(mvabund)
+```
+
+After loading our libaries its time to load and explore the data
+
+```{r load-names}
+# open data from xls to tibble
+fauna_amphi = read_xls("fauna_amphi.xls") %>%
+  as.tbl()
+
+# view names of variables
+fauna_amphi %>% names()
+```
+
+Lets determine the dependent variables and plot a box plot
+
+```{r depednents}
+fauna = mvabund(fauna_amphi[, 6:19])
+boxplot(fauna)
+
+```
+
+We can now try and fit a model
+
+```{r mean-variance}
+model1=manyglm(fauna ~ fauna_amphi$Depth, family="poisson")
+model2=manyglm(fauna ~ fauna_amphi$Season, family="poisson")
+model3=manyglm(fauna ~ fauna_amphi$Depth*fauna_amphi$Season, family="poisson")
+model4=manyglm(fauna ~ fauna_amphi$Mass + fauna_amphi$Depth*fauna_amphi$Season, family="poisson")
+
+plot(model1)
+plot(model2)
+plot(model3)
+plot(model4)
+
+```
+Uh oh, looks likt the residuals change other time, maybe poisson is the wrong family here
+
+```{r negative-binomial}
+model1b=manyglm(fauna ~ fauna_amphi$Depth, family="negative_binomial")
+model2b=manyglm(fauna ~ fauna_amphi$Season, family="negative_binomial")
+model3b=manyglm(fauna ~ fauna_amphi$Depth*fauna_amphi$Season, family="negative_binomial")
+model4b=manyglm(fauna ~ fauna_amphi$Mass + fauna_amphi$Depth*fauna_amphi$Season, family="negative_binomial")
+
+plot(model1b)
+plot(model2b)
+plot(model3b)
+plot(model4b)
+
+```
+
+OK now thats more like it! Much better plot of the residual. Let's have a look at the summaries of these models
+
+```{r summaries}
+summary(model1b)
+summary(model2b)
+summary(model3b)
+summary(model4b)
+```
+Now lets plot some stuff in ggplot2
+```{r ggplot}
+
+ggplot(fauna_amphi, aes(x=Depth,
+                        y=Gammaropsis.ostroumowi)) +
+  geom_boxplot()
+ggplot(fauna_amphi, aes(x=Depth,
+                        y=Amphilocus.manudens)) +
+  geom_boxplot()
+
+```
+
