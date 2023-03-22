@@ -20,10 +20,55 @@ knitr::opts_chunk$set(error = FALSE,
 
 # GLM
 
+![](https://imgs.xkcd.com/comics/linear_regression_2x.png)
+
 The General Linear Model is a framework of models that function within the base concept of:
 
 $$
 Data = Model + Error
 $$
 
-As you will note this is similar to the Straight Line OLS model discussed earlier. In fact OLS is a type of GLM. But there are others, such as Logistic Regression, Possion Regression etc. This others allow you to accomplish feats such as fitting a curve line with what appears to be exponential growth in the continous dependent variable (Possion) or even work out probabilities with a binary categorical dependent variable (Probit, Logistic).
+As you will note this is similar to the Straight Line OLS model discussed earlier. In fact OLS is a type of GLM. But there are others, such as Logistic Regression, Poisson Regression etc. This others allow you to accomplish feats such as fitting a curve line with what appears to be exponential growth in the dependent or even work out probabilities with a binary categorical dependent variable (Probit, Logistic).
+
+## When to move beyond OLS
+
+Particularly for fitting a curve in place of a conventional OLS model, it may be that first you notice that it is necessary when you plot the residuals and the variation in the residuals changes over the course of change in the independent variable. You can check this by working out the Mean-Variance relationship at different points on the model.
+
+## The building blocks of a GLM
+
+GLMS have three building blocks:
+
+### 1. Distribution:
+
+The first building block of a GLM is the choice of probability distribution for the response variable. This distribution is chosen based on the nature of the response variable, and it determines the form of the likelihood function in the model. For example, if the response variable is continuous and normally distributed, we might choose a Gaussian distribution.
+
+### 2. Family:
+
+The second building block of a GLM is the family of probability distributions that is used to model the response variable. The family specifies the form of the likelihood function for the response variable, which is determined by the distribution chosen in the first building block. For example, if the response variable is binary, we might use the binomial family of distributions, which includes the logistic distribution. Other common families include the Poisson family (for count data) and the gamma family (for continuous data with positive values).
+
+### 3. Link function:
+
+The third building block of a GLM is the link function, which specifies the relationship between the linear predictor (the combination of predictor variables and regression coefficients) and the expected value of the response variable. The link function maps the range of the expected value of the response variable to the entire real line, allowing the linear predictor to take on any value. The choice of link function depends on the distribution and family chosen for the response variable. For example, if we are using the binomial family to model binary data, we might use the logistic link function.
+
+# Example in R
+
+```{r example-poisson}
+# generate some random data
+set.seed(123)
+x = rnorm(100)
+z = rnorm(100)
+y = rpois(100, exp(x))
+
+# fit a Poisson regression model with log link function
+model = glm(y ~ x + z,
+            family = poisson(link = "log"))
+
+# print summary of model
+summary(model)
+```
+
+We can also plot the results as follows
+
+```{r poisson-plot}
+plot(model)
+```
