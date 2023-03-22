@@ -43,9 +43,9 @@ knitr::opts_chunk$set(error = FALSE,
 
         -   ANCOVA
 
-        -   Simple (bivariate)
+        -   MANOVA
 
-        -   Multiple regression (OLS)
+        -   Straight line regression (OLS)
 
     -   Generalised Linear Model:
 
@@ -123,7 +123,7 @@ It may appear sometimes that there is a relationship is present in the results. 
 
 ## Sampling
 
-Sampling is working out what proportion of the population you have to sample in order to achieve a given certainity in your results ability to be extrapolated to the wider population
+Sampling is working out what proportion of the population you have to sample in order to achieve a given certainty in your results ability to be extrapolated to the wider population
 
 In general, the smaller your sample size, the greater the standard error.
 

@@ -1,0 +1,29 @@
+---
+title: "Day Three"
+author: "Jody Holland"
+date: "2023-03-22"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(error = FALSE,
+                      warning = FALSE,
+                      message = FALSE)
+```
+
+# R and Statistics Crash Course
+
+*Day Three, 22/03/2023*
+
+# GLM
+
+The General Linear Model is a framework of models that function within the base concept of:
+
+$$
+Data = Model + Error
+$$
+
+As you will note this is similar to the Straight Line OLS model discussed earlier. In fact OLS is a type of GLM. But there are others, such as Logistic Regression, Possion Regression etc. This others allow you to accomplish feats such as fitting a curve line with what appears to be exponential growth in the continous dependent variable (Possion) or even work out probabilities with a binary categorical dependent variable (Probit, Logistic).

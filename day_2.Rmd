@@ -18,9 +18,9 @@ knitr::opts_chunk$set(error = FALSE,
 
 *Day Two, 21/03/2023*
 
-# In detail about Straight Line Linear Model
+# In detail about OLS Linear Model
 
-Straight Line Linear Models denote models based on finding straight line relationships between a set of predictor variables and a response variable. This model is simply expressed as:
+OLS Linear Models denote models based on finding straight line relationships between a set of predictor variables and a response variable. This model is simply expressed as:
 
 $$
 y_i= a + \beta x_i + \epsilon_i
@@ -30,7 +30,9 @@ In this simple two dimensional bivariate model $i$ denotes each individual repli
 
 $$
 y_i= a + \beta_1 x_i +  \beta_2 x_i +  \beta_3 x_i + \beta_ .... x_i + \epsilon_i
-$$This is also called an Ordinary Least Squared Model. This explains a method of determining what should be the intercept and the coefficients to minimise the distance between the line and the actual values (minimising the residuals)
+$$
+
+OLS stands for Ordinary Least Squared Model, which explains a method of determining what should be the intercept and the coefficients to minimise the distance between the line and the actual values (minimising the residuals)
 
 To evaluate an OLS Linear Model, there are several metrics/statistical tools and concepts:
 
@@ -57,8 +59,6 @@ The simple straight line model can be applied to many cases beyond just using di
 A detailed example of this process in R in shown below:
 
 ## Linear Models, 1-Factor ANOVA, and Life Expectancy
-
-As mentioned, the General Linear Model breaks down some of the differences between continuous vs categorical independent variables in stats tests.
 
 Traditionally, there is clear differences between ANOVA and OLS. In OLS both X and Y are continuous, but in ANOVA X is categorical. However if you code the categories in ANOVA as dummy variables then do an OLS. This produces results very similar to OLS
 
@@ -118,16 +118,22 @@ model = lm(data = data_gm,
 summary(model)
 ```
 
-Looking at these results, what is interesting is the intercept represents Oceania, and each continent coefficient below represents the effect on life expectancy each being in each continent has relative to Oceania.
+Looking at these results, what is interesting is the intercept represents Africa, and each continent coefficient below represents the effect on life expectancy each being in each continent has relative to Africa.
 
-We can also extract the ANOVA F-ratio from the model
+We can also plot the model to see information about the model
+
+```{r gapminder-model-plot}
+plot(model)
+```
+
+We can also build a standard ANOVA output from the model. However if you look at the bottom of the summary output, you see that the F-statistic and the overall model p-value are already shown.
 
 ```{r gapminder-anova}
 # generate anova table
 anova(model)
 ```
 
-It appears that maybe continental effects on life expectancy are significant, however as mentioned there are problems with this data.
+It appears that maybe continental effects on life expectancy are manifest, with a significant F-statistic of 59.714 (p \< 0.01) however as mentioned there are problems with this data.
 
 # In detail about ANOVA
 
@@ -145,7 +151,7 @@ It is likely that a high F-Statistic will lead to a small and significant P-Valu
 
 ## More Complex ANOVA
 
-More complex models of ANOVA include more factors/independent variables. Going back to our island example, we could also test the temperature of sea, classifying it into different categorical groupings such as warm, lukewarm etc. To include this data, we would add the value as an interaction effect. This is where it is easier to adapt ANOVA to an OLS straight line regression model. This would look as follows:
+More complex models of ANOVA include more factors/independent variables (still categorical however). Going back to our island example, we could also test the temperature of sea, classifying it into different categorical groupings such as warm, lukewarm etc. To include this data, we would add the value as an interaction effect. This is where it is easier to adapt ANOVA to an OLS straight line regression model. This would look as follows:
 
 $$
 Size_i=a+\beta_1Island_i+\beta_2Temperature_i + \beta_3Island_i * Temperature_i + \epsilon_i
@@ -167,11 +173,11 @@ Remember that we transform the categorical into dummy variables. Thus, the pairi
 
     -   There are many reasons for outliers, and many ways to deal with them. Important however to check how the data was gathered in case there has been an error
 
-## Working with Violations of ANOVA Assumptions
+## Dealing with Violations of ANOVA Assumptions
 
 There are several ways to deal with the above assumptions if they are violated. However, these days one of the most effect way is not found in the abstractions of non-parametric models etc. Rather, the best option is to explore applying GLM curved line models.
 
-# Working with ANCOVA
+# ANCOVA
 
 Interaction Effects! Often you will need to control for a continuous variable when working with categorical data. Using the OLS straight line application to ANOVA this is perfectly possible. To do this, there are several steps:
 
@@ -187,4 +193,41 @@ Interaction Effects! Often you will need to control for a continuous variable wh
 
 # MANOVA
 
-Most models you will work on will be using only one dependent variable. This means they are univariate. However, sometimes you will have to work with multiple dependent variables, seeing how your model affects a variety of variable combinations. You could carry out an ANOVA for each variable but using MANOVA, you can do this all at once.
+MANOVA allows researchers to test whether two or more groups differ significantly in one or more characteristics. It is an extension of ANOVA (analysis of variance) which tests for differences between means.
+
+The main difference between ANOVA and MANOVA is that ANOVA only looks at one dependent variable at a time, while MANOVA looks at multiple dependent variables simultaneously. This makes MANOVA more powerful than ANOVA when there are multiple dependent variables.
+
+MANOVA requires continuous response variables and categorical predictors. It provides a joint test for any significant effects among a set of variables i.e. has a greater power to detect any effects on a group of a combination of variables, rather than just one.
+
+For example, if you were comparing two islands (e.g., Jersey vs Sark) on three different dependent variables (e.g., Cod size, Cod age, and Cod weight), MANOVA would combine these three variables into one composite variable. The MANOVA would then compare this composite variable between men and women to see if there are any significant differences.
+
+```{r manova-example}
+# create random sample data (imagine it has been standardised)
+set.seed(123)
+jersey = data.frame(cod_size = rnorm(10),
+                    cod_age = rnorm(10),
+                    cod_weight = rnorm(10))
+sark = data.frame(cod_size = rnorm(10),
+                  cod_age = rnorm(10),
+                  cod_weight = rnorm(10))
+
+# combine the two groups into one data frame
+df = rbind(jersey, sark)
+
+# indicate that the top 10 rows in df are jersey
+# and the bottom ten are sark
+group = factor(c(rep("Jersey", 10),
+                 rep("Sark", 10)))
+
+# manova
+model_manova = manova(cbind(cod_size,
+                            cod_age,
+                            cod_weight) ~ group,
+                      data = df)
+summary(model_manova)
+
+```
+
+The Pillai's trace statistic is 0.18716, which indicates that there is a weak relationship between the independent variable and the dependent variables. The approximate F-statistic is 1.228, which is not significant (p \>0.1). This suggests that there is no significant difference between the groups in terms of their means on the three dependent variables.
+
+\

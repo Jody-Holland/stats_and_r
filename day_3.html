@@ -12,9 +12,9 @@
 
 <meta name="author" content="Jody Holland" />
 
-<meta name="date" content="2023-03-20" />
+<meta name="date" content="2023-03-22" />
 
-<title>Day One</title>
+<title>Day Three</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -58,9 +58,9 @@ code span.ot { color: #007020; }
 
 <header>
 <div class="inner">
-<h1 class="title toc-ignore">Day One</h1>
+<h1 class="title toc-ignore">Day Three</h1>
 <h3 class="author">Jody Holland</h3>
-<h3 class="date">2023-03-20</h3>
+<h3 class="date">2023-03-22</h3>
 </div>
 </header>
 
@@ -71,171 +71,22 @@ code span.ot { color: #007020; }
     <section id="main-content">
 <div id="r-and-statistics-crash-course" class="section level1">
 <h1>R and Statistics Crash Course</h1>
-<p><em>Day One, 20/03/2023 (Spring Equinox!)</em></p>
+<p><em>Day Three, 22/03/2023</em></p>
 </div>
-<div id="why-stats-why-r" class="section level1">
-<h1>Why Stats, Why R?</h1>
-<ul>
-<li>Stats are painful but good R skills makes it easier</li>
-<li>You don’t have to know much about how the statistical models work,
-just how to use them</li>
-<li>Let us focus on stats models that are intuitive, but have a lot of
-conceptual weight:
-<ul>
-<li>You don’t have to be a mechanic to drive a car, we need to find that
-“Goldilocks Zone” between the maths and operationalisation</li>
-</ul></li>
-<li>Important that your work is repeatable:
-<ul>
-<li>Values of open data (most papers these days want to see your code
-and your data)</li>
-</ul></li>
-<li>The community for R is amazing! Lots of packages and community
-driven innovation!
-<ul>
-<li>Millions of packages, maybe too many</li>
-</ul></li>
-<li>Learning R is tough. It will feel weird at first but will you will
-hit the speedy upwards curve.
-<ul>
-<li><p>Though you gotta work bitch. R is hard and requires self-teaching
-and discipline</p></li>
-<li><p>Use Youtube (and TikTok) xxx</p></li>
-</ul></li>
-</ul>
-</div>
-<div id="what-are-we-doing" class="section level1">
-<h1>What are we doing?</h1>
-<ul>
-<li><p>We are going to look at several families of stats models:</p>
-<ul>
-<li><p>General Linear Model:</p>
-<ul>
-<li><p>ANOVA</p></li>
-<li><p>ANCOVA</p></li>
-<li><p>Simple (bivariate)</p></li>
-<li><p>Multiple regression (OLS)</p></li>
-</ul></li>
-<li><p>Generalised Linear Model:</p>
-<ul>
-<li><p>Poisson</p></li>
-<li><p>Logistic</p></li>
-<li><p>Multivariate GLM</p></li>
-</ul></li>
-<li><p>Mixed Models! Model Selection:</p>
-<ul>
-<li><p>AIC</p></li>
-<li><p>BIC</p></li>
-<li><p>Tests of Fit/Robustness</p></li>
-</ul></li>
-</ul></li>
-</ul>
-</div>
-<div id="process-of-quantitative-analysis" class="section level1">
-<h1>Process of Quantitative Analysis</h1>
-<ol style="list-style-type: decimal">
-<li><p>Go outside, do some research, make some inferences.</p></li>
-<li><p>Build some thesis, looking at how some forces influence
-another</p></li>
-<li><p>Write this as a hypothesis, wherein x leads to y. Hypotheses lead
-to their antithesis the null hypothesis (H<sub>o</sub>), which is the
-statement wherein the predicted relationship doesn’t occur</p></li>
-<li><p>Collect data through quantitative measurements</p></li>
-<li><p>Store data in database</p></li>
-<li><p>Apply statistical models aiming to test the hypothesis</p></li>
-<li><p>Based on result, accept or reject the null hypothesis</p></li>
-</ol>
-<p><em>When you start a new study you have to ask yourself many
-questions with regards to the collection of data, thinking about the
-space, time-span, and manner in which you make your observations. This
-is all included and justified in the “experimental design
-section”.</em></p>
-</div>
-<div id="basic-concepts" class="section level1">
-<h1>Basic Concepts</h1>
-<p>Below are some basic concepts of stats.</p>
-<div id="statistical-inference" class="section level2">
-<h2>Statistical Inference</h2>
-<p>We need stats because we can’t do a universal sample of every
-possible data set, we can only make a subsection an extrapolate our
-results</p>
-</div>
-<div id="random-sampling" class="section level2">
-<h2>Random Sampling</h2>
-<p>In theory every data point should be independent, it should be random
-in the manner they are selected, independent of researcher bias. In
-practice this is very hard.</p>
-</div>
-<div id="replicate" class="section level2">
-<h2>Replicate</h2>
-<p>The lowest level in your design. I would call this the “unit of
-analysis”</p>
-</div>
-<div id="variables" class="section level2">
-<h2>Variables</h2>
-<p>Any type of measurement that you use in your data:</p>
-<ul>
-<li><p>Dependent Variable: Response Variable: Y</p></li>
-<li><p>Independent Variable: Predictor Variable: Explanatory Variable:
-X</p></li>
-<li><p>These variables can be categories, there are ways to make these
-pseudo-numeric, such as using dummy variables (assigning each data point
-either a 1 or 0 to signify if its a member of a given group)</p></li>
-<li><p>Categorical Variables can be configured into “treatments” which
-denotes various groupings of categorical variables</p></li>
-</ul>
-</div>
-<div id="error" class="section level2">
-<h2>Error</h2>
-<p>The degree to which our predictors are unable to determine the
-dependent variable.</p>
-</div>
-<div id="experimental-unit" class="section level2">
-<h2>Experimental Unit</h2>
-<p>Different areas or time-spans wherein your data is collected. Having
-multiple areas wherein data is gathered shows replicatability in your
-experiment</p>
-</div>
-<div id="confounding-relationships" class="section level2">
-<h2>Confounding relationships</h2>
-<p>It may appear sometimes that there is a relationship is present in
-the results. However what it might be is that both your dependent and
-independent variables are actually mutually caused by another, not
-included third variable. Confounding variables are hard to find, you
-have to do a lot of research and accept criticism wholeheartedly</p>
-</div>
-<div id="sampling" class="section level2">
-<h2>Sampling</h2>
-<p>Sampling is working out what proportion of the population you have to
-sample in order to achieve a given certainty in your results ability to
-be extrapolated to the wider population</p>
-<p>In general, the smaller your sample size, the greater the standard
-error.</p>
-<p>However, the relationship between sample size and standard error is
-not linear, there are diminishing returns in increasing the sample size
-and improving your accuracy</p>
-<p>We must also consider the scale of the differences in our findings.
-Say our sample is small but the differences we find between groups is
-large, then maybe having a smaller sample is OK. However, if the
-differences in the results are more nuance, to truly conclude that the
-slight differences that do exist can be extrapolated to the population,
-we need a large sample.</p>
-</div>
-<div id="confidence" class="section level2">
-<h2>Confidence</h2>
-<p>Sampling plays an important role in determining the confidence of our
-results and subsequent inferences. In many circles, confidence is
-denoted using alpha/⍺. ⍺ of 0.05 means 95% confidence, ⍺ of 0.01 means
-99% and so on</p>
-</div>
-<div id="p-values" class="section level2">
-<h2>P Values</h2>
-<p>Be careful about over using the P value (the probability you can
-reject the null hypothesis). Use it in the context of the effect size.
-High P + H effect size… then your cooking. Small effect size however
-could signify P-hacking/overestimating results based on large
-sampling</p>
-</div>
+<div id="glm" class="section level1">
+<h1>GLM</h1>
+<p>The General Linear Model is a framework of models that function
+within the base concept of:</p>
+<p><span class="math display">\[
+Data = Model + Error
+\]</span></p>
+<p>As you will note this is similar to the Straight Line OLS model
+discussed earlier. In fact OLS is a type of GLM. But there are others,
+such as Logistic Regression, Possion Regression etc. This others allow
+you to accomplish feats such as fitting a curve line with what appears
+to be exponential growth in the continous dependent variable (Possion)
+or even work out probabilities with a binary categorical dependent
+variable (Probit, Logistic).</p>
 </div>
     </section>
   </div>
