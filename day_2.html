@@ -166,10 +166,10 @@ code span.ot { color: #007020; }
 <h1>R and Statistics Crash Course</h1>
 <p><em>Day Two, 21/03/2023</em></p>
 </div>
-<div id="in-detail-about-straight-line-linear-model" class="section level1">
-<h1>In detail about Straight Line Linear Model</h1>
-<p>Straight Line Linear Models denote models based on finding straight
-line relationships between a set of predictor variables and a response
+<div id="in-detail-about-ols-linear-model" class="section level1">
+<h1>In detail about OLS Linear Model</h1>
+<p>OLS Linear Models denote models based on finding straight line
+relationships between a set of predictor variables and a response
 variable. This model is simply expressed as:</p>
 <p><span class="math display">\[
 y_i= a + \beta x_i + \epsilon_i
@@ -186,10 +186,11 @@ variable:</p>
 <p><span class="math display">\[
 y_i= a + \beta_1 x_i +  \beta_2 x_i +  \beta_3 x_i + \beta_ .... x_i +
 \epsilon_i
-\]</span>This is also called an Ordinary Least Squared Model. This
-explains a method of determining what should be the intercept and the
-coefficients to minimise the distance between the line and the actual
-values (minimising the residuals)</p>
+\]</span></p>
+<p>OLS stands for Ordinary Least Squared Model, which explains a method
+of determining what should be the intercept and the coefficients to
+minimise the distance between the line and the actual values (minimising
+the residuals)</p>
 <p>To evaluate an OLS Linear Model, there are several
 metrics/statistical tools and concepts:</p>
 <div id="r-squared" class="section level2">
@@ -240,9 +241,6 @@ category).</p>
 <p>A detailed example of this process in R in shown below:</p>
 <div id="linear-models-1-factor-anova-and-life-expectancy" class="section level2">
 <h2>Linear Models, 1-Factor ANOVA, and Life Expectancy</h2>
-<p>As mentioned, the General Linear Model breaks down some of the
-differences between continuous vs categorical independent variables in
-stats tests.</p>
 <p>Traditionally, there is clear differences between ANOVA and OLS. In
 OLS both X and Y are continuous, but in ANOVA X is categorical. However
 if you code the categories in ANOVA as dummy variables then do an OLS.
@@ -537,7 +535,7 @@ men and women to see if there are any significant differences.</p>
 <pre><code>##           Df  Pillai approx F num Df den Df Pr(&gt;F)
 ## group      1 0.18716    1.228      3     16  0.332
 ## Residuals 18</code></pre>
-<p>The Pillai&#39;s trace statistic is 0.18716, which indicates that there
+<p>The Pillai’s trace statistic is 0.18716, which indicates that there
 is a weak relationship between the independent variable and the
 dependent variables. The approximate F-statistic is 1.228, which is not
 significant (p &gt;0.1). This suggests that there is no significant
