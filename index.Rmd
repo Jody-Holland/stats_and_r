@@ -12,6 +12,11 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<style>
+body {
+text-align: justify}
+</style>
+
 # Main Page
 ## Notes for R and Stats Revision 2023
 
@@ -21,3 +26,4 @@ knitr::opts_chunk$set(echo = TRUE)
 ### [**Day One**](day_1.html)
 ### [**Day Two**](day_2.html)
 ### [**Day Three**](day_3.html)
+### [**Day Four**](day_4.html)

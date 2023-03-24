@@ -14,9 +14,14 @@ knitr::opts_chunk$set(error = FALSE,
                       message = FALSE)
 ```
 
+<style>
+body {
+text-align: justify}
+</style>
+
 # R and Statistics Crash Course
 
-*Day Two, 21/03/2023*
+*Day Two*
 
 # In detail about OLS Linear Model
 
@@ -183,11 +188,7 @@ Interaction Effects! Often you will need to control for a continuous variable wh
 
 1.  Break down your categorical variable into dummy variables (in this example whether the island was Jersey or Sark)
 
-2.  Build an interaction effect OLS model using interactions between the continuous variable (in this case depth) and the categorical dummies.\
-    \
-    $$
-    Size_i = a + \beta_1Jersey_i + \beta_2Sark_i+\beta_3 Depth_i + \beta_4Jersey_i * Depth_i  + \beta_5Sark_i * Depth_i + \epsilon_i
-    $$
+2.  Build an interaction effect OLS model using interactions between the continuous variable (in this case depth) and the categorical dummies.
 
 3.  Interpret your results and potential visualise how the various categorical variables affect the way your continuous variable regresses against the dependent (looking at direction and error etc.)
 

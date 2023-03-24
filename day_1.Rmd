@@ -14,9 +14,14 @@ knitr::opts_chunk$set(error = FALSE,
                       message = FALSE)
 ```
 
+<style>
+body {
+text-align: justify}
+</style>
+
 # R and Statistics Crash Course
 
-*Day One, 20/03/2023 (Spring Equinox!)*
+*Day One, (Spring Equinox!)*
 
 # Why Stats, Why R?
 

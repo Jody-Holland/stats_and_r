@@ -14,9 +14,14 @@ knitr::opts_chunk$set(error = FALSE,
                       message = FALSE)
 ```
 
+<style>
+body {
+text-align: justify}
+</style>
+
 # R and Statistics Crash Course
 
-*Day Three, 22/03/2023*
+*Day Three*
 
 # GLM
 

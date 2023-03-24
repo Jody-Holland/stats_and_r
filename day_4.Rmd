@@ -1,0 +1,61 @@
+---
+title: "Day Four"
+author: "Jody Holland"
+date: "2023-03-23"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(error = FALSE,
+                      warning = FALSE,
+                      message = FALSE)
+```
+
+```{=html}
+<style>
+body {
+text-align: justify}
+</style>
+```
+# R and Statistics Crash Course
+
+*Day Four*
+
+# AIC and Model Selection
+
+The Akaike Information Criterion (AIC) is a metric that is used to compare the fit of different regression models, such as GLMs. It includes both the amount of variation explained by the model (the goodness-of-fit) and the number of parameters used by the model (the complexity). A lower AIC value indicates that a model has explained a large amount of variation to a significant (non-random) degree without over-fitting the model by including unnecessary variables. The AIC is calculated as:
+
+$$
+AIC = 2K - 2ln(L)
+$$
+
+Where $K$ is the number of model parameters and $ln(L)$ is the log-likelihood of the model (this means taking the natural log of the probability that the models observations are random, high likelihood, means low fit and significance). For example, if we want to compare two GLMs with different predictor variables, we can calculate their AIC values and choose the one with the lowest value as the best-fit model.
+
+# Stages of Model Selection
+
+The model selection method of quantitative research is as follows:
+
+1.  Define a set of models, why they use certain families of GLM or certain parameters
+
+2.  Test each model for their AIC
+
+3.  Rank the models according to the evidence weight (AIC)
+
+4.  Determine the average predication using the AIC as a weight for the slope
+
+# Mixed Models
+
+Mixed models have two components: fixed effects and random effects. Fixed effects are used to model the relationship between the response variable and the explanatory variables of interest, while random effects account for variation that is not explained by the fixed effects and arise from different levels of grouping in the data.
+
+One of the benefits of mixed models is their ability to account for pseudo-replication in experimental design. Pseudo-replication occurs when multiple measurements are taken on the same individual or group, but are treated as independent observations in the analysis. This can lead to inflated statistical significance and false conclusions.
+
+Mixed models can account for pseudo-replication by modeling the random effects as nested within the fixed effects. This allows for the estimation of both within-group and between-group variation, which can help to avoid the problem of treating multiple measurements on the same individual or group as independent observations.
+
+Mixed models allow us to essentially dis-aggregate lines of fit within a regression model by a categorical variable. If you have a continuous variable you can make it categorical through clever employment of ranges. Let us do a quick example below
+
+```{r}
+
+```
